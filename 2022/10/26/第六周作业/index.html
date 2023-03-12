@@ -1,0 +1,656 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="背景">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第六周作业">
+<meta property="og:url" content="http://example.com/2022/10/26/%E7%AC%AC%E5%85%AD%E5%91%A8%E4%BD%9C%E4%B8%9A/index.html">
+<meta property="og:site_name" content="zhou&#39;s blog">
+<meta property="og:description" content="背景">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2022/10/26/%E7%AC%AC%E5%85%AD%E5%91%A8%E4%BD%9C%E4%B8%9A/image-20221026095849909.png">
+<meta property="og:image" content="http://example.com/2022/10/26/%E7%AC%AC%E5%85%AD%E5%91%A8%E4%BD%9C%E4%B8%9A/image-20221026210427151.png">
+<meta property="og:image" content="http://example.com/2022/10/26/%E7%AC%AC%E5%85%AD%E5%91%A8%E4%BD%9C%E4%B8%9A/image-20221026210731029.png">
+<meta property="og:image" content="http://example.com/2022/10/26/%E7%AC%AC%E5%85%AD%E5%91%A8%E4%BD%9C%E4%B8%9A/image-20221026210941656.png">
+<meta property="og:image" content="http://example.com/2022/10/26/%E7%AC%AC%E5%85%AD%E5%91%A8%E4%BD%9C%E4%B8%9A/image-20221026211129753.png">
+<meta property="og:image" content="http://example.com/2022/10/26/%E7%AC%AC%E5%85%AD%E5%91%A8%E4%BD%9C%E4%B8%9A/image-20221026211338896.png">
+<meta property="og:image" content="http://example.com/2022/10/26/%E7%AC%AC%E5%85%AD%E5%91%A8%E4%BD%9C%E4%B8%9A/image-20221026211731996.png">
+<meta property="og:image" content="http://example.com/2022/10/26/%E7%AC%AC%E5%85%AD%E5%91%A8%E4%BD%9C%E4%B8%9A/image-20221026213419576.png">
+<meta property="og:image" content="http://example.com/2022/10/26/%E7%AC%AC%E5%85%AD%E5%91%A8%E4%BD%9C%E4%B8%9A/image-20221026213839920.png">
+<meta property="og:image" content="http://example.com/2022/10/26/%E7%AC%AC%E5%85%AD%E5%91%A8%E4%BD%9C%E4%B8%9A/image-20221026214552773.png">
+<meta property="og:image" content="http://example.com/2022/10/26/%E7%AC%AC%E5%85%AD%E5%91%A8%E4%BD%9C%E4%B8%9A/image-20221026214931238.png">
+<meta property="og:image" content="http://example.com/2022/10/26/%E7%AC%AC%E5%85%AD%E5%91%A8%E4%BD%9C%E4%B8%9A/image-20221029142920845.png">
+<meta property="og:image" content="http://example.com/2022/10/26/%E7%AC%AC%E5%85%AD%E5%91%A8%E4%BD%9C%E4%B8%9A/image-20221029143203070.png">
+<meta property="og:image" content="http://example.com/2022/10/26/%E7%AC%AC%E5%85%AD%E5%91%A8%E4%BD%9C%E4%B8%9A/image-20221104151223446.png">
+<meta property="article:published_time" content="2022-10-26T01:43:59.000Z">
+<meta property="article:modified_time" content="2022-11-04T07:17:07.088Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="sql xtrabackup mysql主从复制 mycat读写分离 openvpn">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/2022/10/26/%E7%AC%AC%E5%85%AD%E5%91%A8%E4%BD%9C%E4%B8%9A/image-20221026095849909.png">
+  
+  
+  <title>第六周作业 - zhou&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Home
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Tags
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="第六周作业">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-10-26 01:43" pubdate>
+        October 26, 2022 am
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      29k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      239 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">第六周作业</h1>
+            
+            <div class="markdown-body">
+              <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><span id="more"></span>
+
+<h2 id="一-简述DDL-DML-DCL-DQL，并且说明mysql各个关键字查询时候的先后顺序"><a href="#一-简述DDL-DML-DCL-DQL，并且说明mysql各个关键字查询时候的先后顺序" class="headerlink" title="一. 简述DDL,DML,DCL,DQL，并且说明mysql各个关键字查询时候的先后顺序"></a>一. 简述DDL,DML,DCL,DQL，并且说明mysql各个关键字查询时候的先后顺序</h2><p><strong>1. 数据查询语言DQL</strong><br>数据查询语言DQL基本结构是由SELECT子句，FROM子句，WHERE<br>子句组成的查询块：<br>SELECT &lt;字段名表&gt;<br>FROM &lt;表或视图名&gt;<br>WHERE &lt;查询条件&gt;</p>
+<h5 id="2-数据操纵语言DML"><a href="#2-数据操纵语言DML" class="headerlink" title="2 .数据操纵语言DML"></a><strong>2 .数据操纵语言DML</strong></h5><p>数据操纵语言DML主要有三种形式：<br>\1) 插入：INSERT<br>\2) 更新：UPDATE<br>\3) 删除：DELETE</p>
+<p><strong>3. 数据定义语言DDL</strong><br>数据定义语言DDL用来创建数据库中的各种对象—–表、视图、<br>索引、同义词、聚簇等如：<br>CREATE TABLE/VIEW/INDEX/SYN/CLUSTER<br>表 视图 索引 同义词 簇</p>
+<p>DDL操作是隐性提交的！不能rollback </p>
+<p><strong>4. 数据控制语言DCL</strong><br>数据控制语言DCL用来授予或回收访问数据库的某种特权，并控制<br>数据库操纵事务发生的时间及效果，对数据库实行监视等。如：<br>\1) GRANT：授权。<br>\2) ROLLBACK [WORK] TO [SAVEPOINT]：回退到某一点。<br>回滚—ROLLBACK<br>回滚命令使数据库状态回到上次最后提交的状态。其格式为：<br>SQL&gt;ROLLBACK;</p>
+<p>\3) COMMIT [WORK]：提交。</p>
+<h5 id="mysql各个关键字查询时候的先后顺序"><a href="#mysql各个关键字查询时候的先后顺序" class="headerlink" title="mysql各个关键字查询时候的先后顺序"></a>mysql各个关键字查询时候的先后顺序</h5><p><img src="image-20221026095849909.png" srcset="/img/loading.gif" lazyload alt="image-20221026095849909"></p>
+<h2 id="二-自行设计10个sql查询语句，需要用到关键字-GROUP-BY-HAVING-ORDER-BY-LIMIT-，至少同时用到两个。"><a href="#二-自行设计10个sql查询语句，需要用到关键字-GROUP-BY-HAVING-ORDER-BY-LIMIT-，至少同时用到两个。" class="headerlink" title="二. 自行设计10个sql查询语句，需要用到关键字[GROUP BY/HAVING/ORDER BY/LIMIT]，至少同时用到两个。"></a>二. 自行设计10个sql查询语句，需要用到关键字[GROUP BY/HAVING/ORDER BY/LIMIT]，至少同时用到两个。</h2><p>1.查询男同学的信息</p>
+<p>select * from students where Gender =’M’;</p>
+<p><img src="image-20221026210427151.png" srcset="/img/loading.gif" lazyload alt="image-20221026210427151"></p>
+<p>2.查询Duan Yu的班级名字</p>
+<p>select class from students,classes where students.classID=classes.classID and Name=’Duan Yu’; </p>
+<p><img src="image-20221026210731029.png" srcset="/img/loading.gif" lazyload alt="image-20221026210731029"></p>
+<p>3.按照年龄从高到低依次查询学生的信息</p>
+<p>select * from students order by Age desc;</p>
+<p><img src="image-20221026210941656.png" srcset="/img/loading.gif" lazyload alt="image-20221026210941656"></p>
+<p>4.查询男女同学的平均年龄</p>
+<p>select Gender,avg(age) from students group by Gender;</p>
+<p><img src="image-20221026211129753.png" srcset="/img/loading.gif" lazyload alt="image-20221026211129753"></p>
+<p>5.查询30岁以上的男同学姓名</p>
+<p>select Name from students where Gender=’M’ and Age&gt;30;</p>
+<p><img src="image-20221026211338896.png" srcset="/img/loading.gif" lazyload alt="image-20221026211338896"></p>
+<p>6.查询班级人数大于等于2的班级</p>
+<p>select class from students,classes where students.classID=classes.classID group by students.classID having count(*)&gt;=2;</p>
+<p><img src="image-20221026211731996.png" srcset="/img/loading.gif" lazyload alt="image-20221026211731996"></p>
+<p>7.查询得分最高的前5名学生姓名</p>
+<p>select Name from students,scores where students.stuID=scores.stuID order by Score limit 5;</p>
+<p><img src="image-20221026213419576.png" srcset="/img/loading.gif" lazyload alt="image-20221026213419576"></p>
+<p>8.查询平均得分在85分以上的课程号</p>
+<p>select scores.CourseID  from courses,scores where courses.CourseID=scores.CourseID group by scores.CourseID  having avg(Score)&gt;85;</p>
+<p><img src="image-20221026213839920.png" srcset="/img/loading.gif" lazyload alt="image-20221026213839920"></p>
+<p>9.查看课程’Kuihua Baodian’的平均得分</p>
+<p>select avg(Score) from courses,scores where Course=’Kuihua Baodian’ and courses.CourseID =scores.CourseID ;</p>
+<p><img src="image-20221026214552773.png" srcset="/img/loading.gif" lazyload alt="image-20221026214552773"></p>
+<p>10.查询‘Emei Pai’年龄最大的两个人的姓名</p>
+<p>select Name from students,classes where students.classID=classes.classID and class=’Emei Pai’ order by Age limit 2 ;</p>
+<p><img src="image-20221026214931238.png" srcset="/img/loading.gif" lazyload alt="image-20221026214931238"></p>
+<h2 id="三-xtrabackup备份和还原数据库练习"><a href="#三-xtrabackup备份和还原数据库练习" class="headerlink" title="三. xtrabackup备份和还原数据库练习"></a>三. xtrabackup备份和还原数据库练习</h2><figure class="highlight sh"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></div></td><td class="code"><pre><code class="hljs sh">1 备份过程<br>1）完全备份：<br>[root@centos8 ~]<span class="hljs-comment">#yum -y install percona-xtrabackup-24-2.4.20-1.el8.x86_64.rpm</span><br>[root@centos8 ~]<span class="hljs-comment">#mkdir /backup/</span><br>[root@centos8 ~]<span class="hljs-comment">#xtrabackup -uroot -p123456 --backup --target-dir=/backup/base</span><br>2）第一次修改数据<br>3）第一次增量备份<br>[root@centos8 ~]<span class="hljs-comment">#xtrabackup -uroot -p123456 --backup --target-dir=/backup/inc1 --incremental-basedir=/backup/base</span><br>4）第二次修改数据<br>5）第二次增量<br>[root@centos8 ~]<span class="hljs-comment">#xtrabackup -uroot -p123456 --backup --target-dir=/backup/inc2 --incremental-basedir=/backup/inc1</span><br>6）[root@centos8 ~]<span class="hljs-comment">#scp -r /backup/* 目标主机:/backup/</span><br><span class="hljs-comment">#备份过程生成三个备份目录</span><br>/backup/&#123;base，inc1，inc2&#125;<br>2还原过程<br>1）预准备完成备份，此选项--apply-log-only 阻止回滚未完成的事务<br>[root@centos8 ~]<span class="hljs-comment">#yum -y install percona-xtrabackup-24-2.4.20-1.el8.x86_64.rpm</span><br>[root@centos8 ~]<span class="hljs-comment">#xtrabackup --prepare --apply-log-only --target-dir=/backup/base</span><br>2）合并第1次增量备份到完全备份<br>[root@centos8 ~]<span class="hljs-comment">#xtrabackup --prepare --apply-log-only --target-dir=/backup/base </span><br>--incremental-dir=/backup/inc1<br>3）合并第2次增量备份到完全备份：最后一次还原不需要加选项--apply-log-only<br>[root@centos8 ~]<span class="hljs-comment">#xtrabackup --prepare --target-dir=/backup/base --incrementaldir=/backup/inc2</span><br>4）复制到数据库目录，注意数据库目录必须为空，MySQL服务不能启动<br>[root@centos8 ~]<span class="hljs-comment">#xtrabackup --copy-back --target-dir=/backup/base</span><br>5）还原属性：<br>[root@centos8 ~]<span class="hljs-comment">#chown -R mysql:mysql /var/lib/mysql</span><br>6）启动服务：<br>[root@centos8 ~]<span class="hljs-comment">#service mysqld start </span><br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="四-实现mysql主从复制，主主复制和半同步复制"><a href="#四-实现mysql主从复制，主主复制和半同步复制" class="headerlink" title="四. 实现mysql主从复制，主主复制和半同步复制"></a>四. 实现mysql主从复制，主主复制和半同步复制</h2><h4 id="1-主从复制："><a href="#1-主从复制：" class="headerlink" title="1.主从复制："></a>1.主从复制：</h4><h5 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h5><figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs accesslog"><span class="hljs-number">10.0.0.127</span> mysql8.<span class="hljs-number">0</span> 主服务器<br><span class="hljs-number">10.0.0.128</span> mysql8.<span class="hljs-number">0</span> 从服务器<br></code></pre></td></tr></table></figure>
+
+
+
+<h5 id="1-主节点配置："><a href="#1-主节点配置：" class="headerlink" title="1.主节点配置："></a>1.主节点配置：</h5><p>(1)启用二进制日志，设置全局唯一ID号</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs sh">vim /etc/my.cnf<br>[mysqld]<br>skip-name-resolve=1<br>log_bin<br>server-id=127<br></code></pre></td></tr></table></figure>
+
+<p>(2)查看二进制日志的文件和位置</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs sh">mysql&gt; show master status;<br>+---------------+----------+--------------+------------------+-------------------+<br>| File          | Position | Binlog_Do_DB | Binlog_Ignore_DB | Executed_Gtid_Set |<br>+---------------+----------+--------------+------------------+-------------------+<br>| binlog.000049 |      156 |              |                  |                   |<br>+---------------+----------+--------------+------------------+-------------------+<br>1 row <span class="hljs-keyword">in</span> <span class="hljs-built_in">set</span> (0.00 sec)<br></code></pre></td></tr></table></figure>
+
+<p>(3)创建有复制权限的用户账号</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sh">(root@localhost) [(none)]&gt;create user repluser@<span class="hljs-string">&#x27;10.0.0.%&#x27;</span> identified by <span class="hljs-string">&#x27;123456&#x27;</span>;<br>(root@localhost) [(none)]&gt;grant replication slave on *.* to repluser@<span class="hljs-string">&#x27;10.0.0.%&#x27;</span>; <br></code></pre></td></tr></table></figure>
+
+<h5 id="2-从节点配置"><a href="#2-从节点配置" class="headerlink" title="2.从节点配置"></a>2.从节点配置</h5><p>（1）设置ID号和只读模式</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sh">[mysqld]<br>server_id=128<br>read-only<br></code></pre></td></tr></table></figure>
+
+<p>（2）使用有复制权限的账号连接主服务器，</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs sh">CHANGE MASTER TO<br> MASTER_HOST=<span class="hljs-string">&#x27;10.0.0.127&#x27;</span>,<br> MASTER_USER=<span class="hljs-string">&#x27;repluser&#x27;</span>,<br> MASTER_PASSWORD=<span class="hljs-string">&#x27;123456&#x27;</span>,<br> MASTER_PORT=3306,<br> MASTER_LOG_FILE=<span class="hljs-string">&#x27;binlog.000049&#x27;</span>, MASTER_LOG_POS=156;<br></code></pre></td></tr></table></figure>
+
+<p>（3）开启线程</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sh">mysql&gt; start slave;<br>Query OK, 0 rows affected, 1 warning (0.00 sec)<br></code></pre></td></tr></table></figure>
+
+<h5 id="3-查看状态"><a href="#3-查看状态" class="headerlink" title="3.查看状态"></a>3.查看状态</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs sh">mysql&gt; show slave status\G;<br>*************************** 1. row ***************************<br>               Slave_IO_State: Waiting <span class="hljs-keyword">for</span> <span class="hljs-built_in">source</span> to send event<br>                  Master_Host: 10.0.0.127<br>                  Master_User: repluser<br>                  Master_Port: 3306<br>                Connect_Retry: 60<br>              Master_Log_File: binlog.000049<br>          Read_Master_Log_Pos: 156<br>               Relay_Log_File: rocky2-relay-bin.000002<br>                Relay_Log_Pos: 321<br>        Relay_Master_Log_File: binlog.000049<br>             Slave_IO_Running: Yes<br>            Slave_SQL_Running: Yes<br>            ...<br></code></pre></td></tr></table></figure>
+
+<p>主从建立成功</p>
+<h4 id="2-主主复制："><a href="#2-主主复制：" class="headerlink" title="2.主主复制："></a>2.主主复制：</h4><h5 id="实验环境-1"><a href="#实验环境-1" class="headerlink" title="实验环境"></a>实验环境</h5><figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs accesslog"><span class="hljs-number">10.0.0.127</span> mysql8.<span class="hljs-number">0</span> 主服务器<span class="hljs-number">1</span><br><span class="hljs-number">10.0.0.128</span> mysql8.<span class="hljs-number">0</span> 主服务器<span class="hljs-number">2</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h5 id="1-主1节点配置："><a href="#1-主1节点配置：" class="headerlink" title="1.主1节点配置："></a>1.主1节点配置：</h5><p>(1)启用二进制日志，设置全局唯一ID号，设置自动增长id为奇数</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs sh">vim /etc/my.cnf<br>[mysqld]<br>log_bin<br>server-id=127<br>auto_increment_offset=1 <span class="hljs-comment">#开始点</span><br>auto_increment_increment=2 <span class="hljs-comment">#增长幅度</span><br></code></pre></td></tr></table></figure>
+
+<p>(2)查看二进制日志的文件和位置</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs sh">mysql&gt; show master status;<br>+-------------------+----------+--------------+------------------+-------------------+<br>| File              | Position | Binlog_Do_DB | Binlog_Ignore_DB | Executed_Gtid_Set |<br>+-------------------+----------+--------------+------------------+-------------------+<br>| rocky1-bin.000001 |     1874 |              |                  |                   |<br>+-------------------+----------+--------------+------------------+-------------------+<br>1 row <span class="hljs-keyword">in</span> <span class="hljs-built_in">set</span> (0.00 sec)<br></code></pre></td></tr></table></figure>
+
+<p>(3)创建有复制权限的用户账号</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sh">(root@localhost) [(none)]&gt;create user repluser@<span class="hljs-string">&#x27;10.0.0.%&#x27;</span> identified by <span class="hljs-string">&#x27;123456&#x27;</span>;<br>(root@localhost) [(none)]&gt;grant replication slave on *.* to repluser@<span class="hljs-string">&#x27;10.0.0.%&#x27;</span>; <br></code></pre></td></tr></table></figure>
+
+<p>（4）使用有复制权限的账号连接主服务器</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs sh">mysql&gt;  CHANGE MASTER TO<br>    -&gt;   MASTER_HOST=<span class="hljs-string">&#x27;10.0.0.128&#x27;</span>,<br>    -&gt;   MASTER_USER=<span class="hljs-string">&#x27;repluser&#x27;</span>,<br>    -&gt;   MASTER_PASSWORD=<span class="hljs-string">&#x27;123456&#x27;</span>,<br>    -&gt;   MASTER_PORT=3306,<br>    -&gt;   MASTER_LOG_FILE=<span class="hljs-string">&#x27;binlog.000001&#x27;</span>, MASTER_LOG_POS=156;<br>Query OK, 0 rows affected, 9 warnings (0.01 sec)<br></code></pre></td></tr></table></figure>
+
+<p>（5）开启线程</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sh">mysql&gt; start slave;<br>Query OK, 0 rows affected, 1 warning (0.00 sec)<br></code></pre></td></tr></table></figure>
+
+
+
+<h5 id="2-主2节点配置"><a href="#2-主2节点配置" class="headerlink" title="2.主2节点配置"></a>2.主2节点配置</h5><p>(1)启用二进制日志，设置全局唯一ID号，设置自动增长id为偶数</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs sh">vim /etc/my.cnf<br>[mysqld]<br>log_bin<br>server-id=128<br>auto_increment_offset=2 <span class="hljs-comment">#开始点</span><br>auto_increment_increment=2 <span class="hljs-comment">#增长幅度</span><br></code></pre></td></tr></table></figure>
+
+<p>(2)查看二进制日志的文件和位置</p>
+<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs asciidoc"><span class="hljs-section">mysql&gt; show master status;</span><br><span class="hljs-section">+-------------------+----------+--------------+------------------+-------------------+</span><br><span class="hljs-section">| File              | Position | Binlog_Do_DB | Binlog_Ignore_DB | Executed_Gtid_Set |</span><br><span class="hljs-section">+-------------------+----------+--------------+------------------+-------------------+</span><br><span class="hljs-section">| rocky2-bin.000001 |      156 |              |                  |                   |</span><br><span class="hljs-section">+-------------------+----------+--------------+------------------+-------------------+</span><br>1 row in set (0.00 sec)<br></code></pre></td></tr></table></figure>
+
+<p>(3)创建有复制权限的用户账号</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs sh"><br>mysql&gt; create user repluser@<span class="hljs-string">&#x27;10.0.0.%&#x27;</span> identified by <span class="hljs-string">&#x27;123456&#x27;</span>;<br>Query OK, 0 rows affected (0.02 sec)<br><br>mysql&gt; grant replication slave on *.* to repluser@<span class="hljs-string">&#x27;10.0.0.%&#x27;</span>;<br>Query OK, 0 rows affected (0.00 sec)<br></code></pre></td></tr></table></figure>
+
+<p>（4）使用有复制权限的账号连接主服务器，</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs sh">mysql&gt;  CHANGE MASTER TO<br>    -&gt;   MASTER_HOST=<span class="hljs-string">&#x27;10.0.0.127&#x27;</span>,<br>    -&gt;   MASTER_USER=<span class="hljs-string">&#x27;repluser&#x27;</span>,<br>    -&gt;   MASTER_PASSWORD=<span class="hljs-string">&#x27;123456&#x27;</span>,<br>    -&gt;   MASTER_PORT=3306,<br>    -&gt;   MASTER_LOG_FILE=<span class="hljs-string">&#x27;binlog.000001&#x27;</span>, MASTER_LOG_POS=1874;<br>Query OK, 0 rows affected, 9 warnings (0.00 sec)<br></code></pre></td></tr></table></figure>
+
+<p>（5）开启线程</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sh">mysql&gt; start slave;<br>Query OK, 0 rows affected, 1 warning (0.00 sec)<br></code></pre></td></tr></table></figure>
+
+<h4 id="3-半同步复制"><a href="#3-半同步复制" class="headerlink" title="3.半同步复制"></a>3.半同步复制</h4><h5 id="实验环境-2"><a href="#实验环境-2" class="headerlink" title="实验环境"></a>实验环境</h5><figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs accesslog"><span class="hljs-number">10.0.0.127</span> mysql8.<span class="hljs-number">0</span> 主服务器<br><span class="hljs-number">10.0.0.128</span> mysql8.<span class="hljs-number">0</span> 从服务器<span class="hljs-number">1</span><br><span class="hljs-number">10.0.0.130</span> ubantu   从服务器<span class="hljs-number">2</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h5 id="1-主节点配置：-1"><a href="#1-主节点配置：-1" class="headerlink" title="1.主节点配置："></a>1.主节点配置：</h5><p>(1)安装插件</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sh">mysql&gt; INSTALL PLUGIN rpl_semi_sync_master SONAME <span class="hljs-string">&#x27;semisync_master.so&#x27;</span>;<br>Query OK, 0 rows affected, 1 warning (0.00 sec)<br></code></pre></td></tr></table></figure>
+
+<p>(2)master服务器配置</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs sh">[root@rocky1 ~]<span class="hljs-comment">#vim /etc/my.cnf</span><br>[mysqld]<br>log_bin<br>server-id=127<br>rql_semi_sync_master_enabled =ON<br>rql_semi_sync_master_timeout=3000<br></code></pre></td></tr></table></figure>
+
+<h5 id="2-从节点配置-1"><a href="#2-从节点配置-1" class="headerlink" title="2.从节点配置"></a>2.从节点配置</h5><p>（1）安装插件</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sh">mysql&gt; INSTALL PLUGIN rpl_semi_sync_slave SONAME <span class="hljs-string">&#x27;semisync_slave.so&#x27;</span><br>    -&gt; ;<br>Query OK, 0 rows affected, 1 warning (0.00 sec)xxxxxxxxxx mysql&gt; INSTALL PLUGIN rpl_semi_sync_slave SONAME <span class="hljs-string">&#x27;semisync_slave.so&#x27;</span>    -&gt; ;Query OK, 0 rows affected, 1 warning (0.00 sec)<br></code></pre></td></tr></table></figure>
+
+<p>（2）从服务器配置文件</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs sh"> [root@rocky2 ~]<span class="hljs-comment"># vim /etc/my.cnf #从服务器1</span><br>[mysqld]<br>server-id=128<br>rql_semi_sync_slave_enabled=on<br> <br>root@ubantu2004:~<span class="hljs-comment">#  vim /etc/mysql/mysql.cnf #从服务器2</span><br> [mysqld]<br>server-id=130<br>rql_semi_sync_slave_enabled=on<br></code></pre></td></tr></table></figure>
+
+<p>（3）开启线程</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sh">mysql&gt; start slave;<br>Query OK, 0 rows affected, 1 warning (0.00 sec)<br></code></pre></td></tr></table></figure>
+
+<h5 id="3-验证："><a href="#3-验证：" class="headerlink" title="3.验证："></a>3.验证：</h5><p>从节点mysql服务全部关闭，观察主服务器插入数据是否能提交成功</p>
+<p><img src="image-20221029142920845.png" srcset="/img/loading.gif" lazyload alt="image-20221029142920845"></p>
+<p>由于设置了超时时间，三秒内，由于模式为半同步复制，且从服务器全部关闭服务，没收到ack，所以无法提交事务，三秒后，到达超时时间，切换为异步模式，提交成功</p>
+<p><img src="image-20221029143203070.png" srcset="/img/loading.gif" lazyload alt="image-20221029143203070"></p>
+<h3 id="五-用mycat实现mysql的读写分离"><a href="#五-用mycat实现mysql的读写分离" class="headerlink" title="五. 用mycat实现mysql的读写分离"></a>五. 用mycat实现mysql的读写分离</h3><h5 id="实验环境-3"><a href="#实验环境-3" class="headerlink" title="实验环境"></a>实验环境</h5><figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs accesslog"><span class="hljs-number">10.0.0.127</span> mycat 主服务器<br><span class="hljs-number">10.0.0.128</span> mysql8.<span class="hljs-number">0</span> 主服务器负责写<br><span class="hljs-number">10.0.0.130</span> mysql8.<span class="hljs-number">0</span> 从服务器负责读<br></code></pre></td></tr></table></figure>
+
+<h5 id="1-创建mysql主从数据库"><a href="#1-创建mysql主从数据库" class="headerlink" title="1.创建mysql主从数据库"></a>1.创建mysql主从数据库</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sh">[root@mysql-master ~]<span class="hljs-comment"># yum -y install mysql-server</span><br>root@mysql-slave:~<span class="hljs-comment"># yum -y install mysql-server</span><br></code></pre></td></tr></table></figure>
+
+<p>(1).修改mysql配置文件</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs sh">[root@mysql-master ~]<span class="hljs-comment"># vim /etc/my.cnf</span><br>[mysqld]<br>server-id=128<br>log-bin<br><br>root@mysql-slave:~<span class="hljs-comment"># vim /etc/mysql/my.cnf</span><br>[mysqld]<br>server-id=130<br></code></pre></td></tr></table></figure>
+
+<p>(2)创建有复制权限的用户账号</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs sh">mysql&gt; create user repluser@<span class="hljs-string">&#x27;10.0.0.%&#x27;</span> identified by <span class="hljs-string">&#x27;123456&#x27;</span>;<br>mysql&gt; grant replication slave on *.* to repluser@<span class="hljs-string">&#x27;10.0.0.%&#x27;</span>; <br>mysql&gt; show master logs;<br>+-------------------------+-----------+-----------+<br>| Log_name                | File_size | Encrypted |<br>+-------------------------+-----------+-----------+<br>| mycat-server-bin.000001 |       210 | No        |<br>| mycat-server-bin.000002 |       156 | No        |<br>+-------------------------+-----------+-----------+<br>2 rows <span class="hljs-keyword">in</span> <span class="hljs-built_in">set</span> (0.00 sec)<br></code></pre></td></tr></table></figure>
+
+<p>(3).在slave上执行</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_">mysql&gt; </span><span class="language-bash">  CHANGE MASTER TO</span><br>    -&gt;  MASTER_HOST=&#x27;10.0.0.128&#x27;,<br>    -&gt; MASTER_USER=&#x27;repluser&#x27;,<br>    -&gt;  MASTER_PASSWORD=&#x27;123456&#x27;,<br>    -&gt;  MASTER_PORT=3306,<br>    -&gt;  MASTER_LOG_FILE=&#x27;mysql-master-bin.000001&#x27;, MASTER_LOG_POS=156;<br><span class="hljs-meta prompt_">mysql&gt; </span><span class="language-bash">start slave;</span><br><span class="hljs-meta prompt_">mysql&gt; </span><span class="language-bash">show slave status\G;</span><br>*************************** 1. row ***************************<br>               Slave_IO_State: Waiting for source to send event<br>                  Master_Host: 10.0.0.128<br>                  Master_User: repluser<br>                  Master_Port: 3306<br>                Connect_Retry: 60<br>              Master_Log_File: mysql-master-bin.000001<br>          Read_Master_Log_Pos: 156<br>               Relay_Log_File: mysql-slave-relay-bin.000002<br>                Relay_Log_Pos: 332<br>        Relay_Master_Log_File: mysql-master-bin.000001<br>             Slave_IO_Running: Yes<br>            Slave_SQL_Running: Yes<br>            ...<br></code></pre></td></tr></table></figure>
+
+
+
+<h5 id="2-在10-0-0-127上安装并启动mycat"><a href="#2-在10-0-0-127上安装并启动mycat" class="headerlink" title="2.在10.0.0.127上安装并启动mycat"></a>2.在10.0.0.127上安装并启动mycat</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><code class="hljs sh">[root@mycat-server ~]<span class="hljs-comment">#yum -y install java</span><br>[root@mycat-server ~]<span class="hljs-comment">#java -version</span><br>openjdk version <span class="hljs-string">&quot;1.8.0_332&quot;</span><br>OpenJDK Runtime Environment (build 1.8.0_332-b09)<br>OpenJDK 64-Bit Server VM (build 25.332-b09, mixed mode)<br><br>[root@mycat-server ~]<span class="hljs-comment">#wget http://dl.mycat.org.cn/1.6.7.6/20210303094759/Mycat-server-1.6.7.6-release-20210303094759-linux.tar.gz</span><br>--2022-10-31 19:35:13--  http://dl.mycat.org.cn/1.6.7.6/20210303094759/Mycat-server-1.6.7.6-release-20210303094759-linux.tar.gz<br>Resolving dl.mycat.org.cn (dl.mycat.org.cn)... 210.51.26.184<br>Connecting to dl.mycat.org.cn (dl.mycat.org.cn)|210.51.26.184|:80... connected.<br>HTTP request sent, awaiting response... 200 OK<br>Length: 26030477 (25M) [application/octet-stream]<br>Saving to: ‘Mycat-server-1.6.7.6-release-20210303094759-linux.tar.gz’<br><br>Mycat-server-1.6.7.6-release-2021 100%[=============================================================&gt;]  24.82M  9.65MB/s    <span class="hljs-keyword">in</span> 2.6s    <br><br>2022-10-31 19:35:15 (9.65 MB/s) - ‘Mycat-server-1.6.7.6-release-20210303094759-linux.tar.gz’ saved [26030477/26030477]<br>[root@mycat-server ~]<span class="hljs-comment">#mkdir /apps</span><br>[root@mycat-server ~]<span class="hljs-comment">#tar xvf Mycat-server-1.6.7.6-release-20210303094759-linux.tar.gz -C /apps/</span><br><br>[root@mycat-server ~]<span class="hljs-comment">#echo &#x27;PATH=/apps/mycat/bin:$PATH&#x27; &gt;/etc/profile.d/mycat,sh  #修改环境变量</span><br>[root@mycat-server ~]<span class="hljs-comment">#.  /etc/profile.d/mycat,sh </span><br>[root@mycat-server ~]<span class="hljs-comment">#echo $PATH</span><br>/apps/mycat/bin:/usr/pgsql14//bin/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin<br><span class="hljs-comment">#查看端口</span><br>[root@mycat-server ~]<span class="hljs-comment">#ss -ntl</span><br>State    Recv-Q   Send-Q     Local Address:Port     Peer Address:Port  Process  <br>LISTEN   0        128              0.0.0.0:22            0.0.0.0:*               <br>LISTEN   0        128                 [::]:22               [::]:*  <br><br>LISTEN  0        128                    *:8066                 *:*  <br><span class="hljs-comment">#启动mycat</span><br>[root@mycat-server ~]<span class="hljs-comment">#mycat start</span><br>Starting Mycat-server...<br><span class="hljs-comment">#连接mycat</span><br>[root@mysql-master ~]<span class="hljs-comment"># mysql -uroot -p123456 -h 10.0.0.127 -P8066</span><br>mysql: [Warning] Using a password on the <span class="hljs-built_in">command</span> line interface can be insecure.<br>Welcome to the MySQL monitor.  Commands end with ; or \g.<br>Your MySQL connection <span class="hljs-built_in">id</span> is 1<br>Server version: 5.6.29-mycat-1.6.7.6-release-20210303094759 MyCat Server (OpenCloudDB)<br><br>Copyright (c) 2000, 2021, Oracle and/or its affiliates.<br><br>Oracle is a registered trademark of Oracle Corporation and/or its<br>affiliates. Other names may be trademarks of their respective<br>owners.<br><br>Type <span class="hljs-string">&#x27;help;&#x27;</span> or <span class="hljs-string">&#x27;\h&#x27;</span> <span class="hljs-keyword">for</span> <span class="hljs-built_in">help</span>. Type <span class="hljs-string">&#x27;\c&#x27;</span> to clear the current input statement.<br><br>mysql&gt; show databases;<br>+----------+<br>| DATABASE |<br>+----------+<br>| TESTDB   |<br>+----------+<br>1 row <span class="hljs-keyword">in</span> <span class="hljs-built_in">set</span> (0.00 sec)<br><br></code></pre></td></tr></table></figure>
+
+<h5 id="3-在mycat服务器修改server-xml"><a href="#3-在mycat服务器修改server-xml" class="headerlink" title="3.在mycat服务器修改server.xml"></a>3.在mycat服务器修改server.xml</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs sh">[root@mycat-server ~]<span class="hljs-comment">#vim /apps/mycat/conf/server.xml</span><br> &lt;property name=<span class="hljs-string">&quot;serverPort&quot;</span>&gt;3306&lt;/property&gt;<br> &lt;property name=<span class="hljs-string">&quot;dataNodeIdleCheckPeriod&quot;</span>&gt;300000&lt;/property&gt;  <span class="hljs-comment"># 5 * 60 * 1000L; //连接空闲检查</span><br>                        &lt;property name=<span class="hljs-string">&quot;frontWriteQueueSize&quot;</span>&gt;4096&lt;/property&gt; &lt;property name=<span class="hljs-string">&quot;processors&quot;</span>&gt;32&lt;/property&gt; <span class="hljs-comment">#--&gt;</span><br>                &lt;!--分布式事务开关，0为不过滤分布式事务，1为过滤分布式事务（如果分布式事务内只涉及全局表，则不过滤），2为不过滤分布式事&gt;务,但是记录分布式事务日志--&gt;<br>                <br><span class="hljs-comment">#重启mycat</span><br>[root@mycat-server ~]<span class="hljs-comment">#mycat restart</span><br>Stopping Mycat-server...<br>Stopped Mycat-server.<br>Starting Mycat-server...<br></code></pre></td></tr></table></figure>
+
+<h5 id="4-修改schema-xml实现读写分离"><a href="#4-修改schema-xml实现读写分离" class="headerlink" title="4.修改schema.xml实现读写分离"></a>4.修改schema.xml实现读写分离</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs sh">[root@mycat-server ~]<span class="hljs-comment">#vim /apps/mycat/conf/</span><br> &lt;schema name=<span class="hljs-string">&quot;TESTDB&quot;</span> checkSQLschema=<span class="hljs-string">&quot;false&quot;</span> sqlMaxLimit=<span class="hljs-string">&quot;100&quot;</span> randomDataNode=<span class="hljs-string">&quot;dn1&quot;</span>&gt;<br> &lt;dataNode name=<span class="hljs-string">&quot;dn1&quot;</span> dataHost=<span class="hljs-string">&quot;localhost1&quot;</span> database=<span class="hljs-string">&quot;mycat&quot;</span> /&gt;<br>  &lt;dataHost name=<span class="hljs-string">&quot;localhost1&quot;</span> maxCon=<span class="hljs-string">&quot;1000&quot;</span> minCon=<span class="hljs-string">&quot;10&quot;</span> balance=<span class="hljs-string">&quot;1&quot;</span><br> &lt;writeHost host=<span class="hljs-string">&quot;host1&quot;</span> url=<span class="hljs-string">&quot;10.0.0.128:3306&quot;</span> user=<span class="hljs-string">&quot;root&quot;</span>      password=<span class="hljs-string">&quot;123456&quot;</span>&gt;<br>&lt;readhost host=<span class="hljs-string">&quot;host2&quot;</span> url=<span class="hljs-string">&quot;10.0.0.130:3306&quot;</span> user=<span class="hljs-string">&quot;root&quot;</span> password=<span class="hljs-string">&quot;123456&quot;</span>/&gt;<br></code></pre></td></tr></table></figure>
+
+<h5 id="5-在mysql主服务器上创建root账号并授权"><a href="#5-在mysql主服务器上创建root账号并授权" class="headerlink" title="5.在mysql主服务器上创建root账号并授权"></a>5.在mysql主服务器上创建root账号并授权</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs sh">mysql&gt; create user admin@<span class="hljs-string">&#x27;10.0.0.%&#x27;</span> identified by <span class="hljs-string">&#x27;123456&#x27;</span>;<br>Query OK, 0 rows affected (0.01 sec)<br><br>mysql&gt; grant all on *.* to <span class="hljs-string">&#x27;admin&#x27;</span>@<span class="hljs-string">&#x27;10.0.0.%&#x27;</span>;<br>Query OK, 0 rows affected (0.00 sec)<br></code></pre></td></tr></table></figure>
+
+<h5 id="6-在mycat服务器上测试连接mysql"><a href="#6-在mycat服务器上测试连接mysql" class="headerlink" title="6.在mycat服务器上测试连接mysql"></a>6.在mycat服务器上测试连接mysql</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs SH">[root@mysql-master ~]<span class="hljs-comment"># mysql -uroot -p123456 -h 10.0.0.127</span><br>mysql&gt; SHOW DATABASES;<br>+----------+<br>| DATABASE |<br>+----------+<br>| TESTDB   |<br>+----------+<br>1 row <span class="hljs-keyword">in</span> <span class="hljs-built_in">set</span> (0.00 sec)<br><br></code></pre></td></tr></table></figure>
+
+<h5 id="7-在mysql服务器测试"><a href="#7-在mysql服务器测试" class="headerlink" title="7.在mysql服务器测试"></a>7.在mysql服务器测试</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-comment">#此时已完成Mycat读写分离，客户端主机访问Mycat主机</span><br>[root@rhel ~]<span class="hljs-comment"># mysql -uroot -p123456  -h 10.0.0.127 --default_auth=mysql_native_password</span><br>mysql&gt; use TESTDB;<br><span class="hljs-comment">#进行查询，读操作实际访问从节点</span><br>MySQL&gt; select @@server_id;<br>+-------------+<br>| @@server_id |<br>+-------------+<br>|         131 |<br>+-------------+<br><span class="hljs-comment">#修改数据，读操作实际访问主节点，可以在/var/lib/mysql/master.log中查看到相应记录</span><br><span class="hljs-comment">#需要先开启通用日志，持续生效可修改配置文件</span><br>[root@cmysql-slave ~]<span class="hljs-variable">$mysql</span><br>mysql&gt; <span class="hljs-built_in">set</span> global  general_log=1;<br><br><br><span class="hljs-comment">#停止从节点，Mycat自动调度读请求至主节点</span><br>[root@mysql-slave ~]<span class="hljs-variable">$systemctl</span> stop mysqld<br>[root@rhel ~]<span class="hljs-comment"># mysql -uroot -p123456  -h 10.0.0.152 --default_auth=mysql_native_password</span><br>MySQL&gt; select @@server_id;<br>+-------------+<br>| @@server_id |<br>+-------------+<br>|         128 |<br>+-------------+<br><br><span class="hljs-comment">#从节点无法代替主节点</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="六-实现openvpn部署"><a href="#六-实现openvpn部署" class="headerlink" title="六.实现openvpn部署"></a>六.实现openvpn部署</h3><h5 id="实验环境-4"><a href="#实验环境-4" class="headerlink" title="实验环境"></a>实验环境</h5><figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs dns">总共三台机器：<br>openvpn-server(mysql8.<span class="hljs-number">0</span>):<br>eth<span class="hljs-number">0:10.0.0</span>.<span class="hljs-number">128</span> <br>eth<span class="hljs-number">1:192.168.10</span>.<span class="hljs-number">128</span><br>公网主机（mysql8.<span class="hljs-number">0</span>）：<br>eth<span class="hljs-number">0：10.0.0</span>.<span class="hljs-number">127</span><br>内网主机（mysql8.<span class="hljs-number">0</span>）：<br>eth<span class="hljs-number">0:192.168.10</span>.<span class="hljs-number">133</span><br></code></pre></td></tr></table></figure>
+
+<h5 id="1-安装openvpn软件包并配置环境"><a href="#1-安装openvpn软件包并配置环境" class="headerlink" title="1.安装openvpn软件包并配置环境"></a>1.安装openvpn软件包并配置环境</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs sh">[root@openvpn-server network-scripts]<span class="hljs-comment">#yum -y install openvpn </span><br>[root@openvpn-server network-scripts]<span class="hljs-comment">#yum -y install easy-rsa #用来生成证书相关文件和颁布证书</span><br><br><span class="hljs-comment">#生成服务器端配置文件</span><br>[root@openvpn-server network-scripts]<span class="hljs-comment">#cp /usr/share/doc/openvpn/sample/sample-config-files/server.conf  /etc/openvpn/</span><br><span class="hljs-comment">#准备证书颁发相关文件</span><br>[root@openvpn-server network-scripts]<span class="hljs-comment">#cp -r /usr/share/easy-rsa/ /etc/openvpn/easy-rsa-server</span><br><span class="hljs-comment">#准备颁发证书相关配置变量的配置文件</span><br>[root@openvpn-server network-scripts]<span class="hljs-comment">#cp -r /usr/share/doc/easy-rsa/vars.example /etc/openvpn/easy-rsa-server/3/vars</span><br><span class="hljs-comment">#修改给CA和服务器颁发证书的有效期，适当加长</span><br>[root@openvpn-server network-scripts]<span class="hljs-comment">#vim /etc/openvpn/easy-rsa-server/3/vars</span><br>set_var EASYRSA_CA_EXPIRE       365000<span class="hljs-comment">#CA证书有效期，默认十年，建议改长</span><br>set_var EASYRSA_CERT_EXPIRE     8250<span class="hljs-comment">#服务器证书有效期，默认825天，建议改长</span><br><br>[root@openvpn-server network-scripts]<span class="hljs-comment">#tree /etc/openvpn/</span><br>/etc/openvpn/<br>├── client<br>├── easy-rsa-server<br>│   ├── 3 -&gt; 3.0.8<br>│   ├── 3.0 -&gt; 3.0.8<br>│   └── 3.0.8<br>│       ├── easyrsa<br>│       ├── openssl-easyrsa.cnf<br>│       ├── vars<br>│       └── x509-types<br>│           ├── ca<br>│           ├── client<br>│           ├── code-signing<br>│           ├── COMMON<br>│           ├── email<br>│           ├── kdc<br>│           ├── server<br>│           └── serverClient<br>├── server<br>└── server.conf<br><br>7 directories, 12 files<br></code></pre></td></tr></table></figure>
+
+<h5 id="2-准备证书相关文件"><a href="#2-准备证书相关文件" class="headerlink" title="2.准备证书相关文件"></a>2.准备证书相关文件</h5><h6 id="1-脚本easyrsa帮助"><a href="#1-脚本easyrsa帮助" class="headerlink" title="(1).脚本easyrsa帮助"></a>(1).脚本easyrsa帮助</h6><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs sh">[root@openvpn-server ~]<span class="hljs-comment">#cd /etc/openvpn/easy-rsa-server/3/</span><br>[root@openvpn-server 3]<span class="hljs-comment">#./easyrsa</span><br><br>Easy-RSA 3 usage and overview<br><br>USAGE: easyrsa [options] COMMAND [command-options]<br><br>A list of commands is shown below. To get detailed usage and <span class="hljs-built_in">help</span> <span class="hljs-keyword">for</span> a<br><span class="hljs-built_in">command</span>, run:<br>  ./easyrsa <span class="hljs-built_in">help</span> COMMAND<br><br>For a listing of options that can be supplied before the <span class="hljs-built_in">command</span>, use:<br>  ./easyrsa <span class="hljs-built_in">help</span> options<br><br>Here is the list of commands available with a short syntax reminder. Use the<br><span class="hljs-string">&#x27;help&#x27;</span> <span class="hljs-built_in">command</span> above to get full usage details.<br><br>  init-pki<br>  build-ca [ cmd-opts ]<br>  gen-dh<br>  gen-req &lt;filename_base&gt; [ cmd-opts ]<br>  sign-req &lt;<span class="hljs-built_in">type</span>&gt; &lt;filename_base&gt;<br>  build-client-full &lt;filename_base&gt; [ cmd-opts ]<br>  build-server-full &lt;filename_base&gt; [ cmd-opts ]<br>  revoke &lt;filename_base&gt; [cmd-opts]<br>  renew &lt;filename_base&gt; [cmd-opts]<br>  build-serverClient-full &lt;filename_base&gt; [ cmd-opts ]<br>  gen-crl<br>  update-db<br>  show-req &lt;filename_base&gt; [ cmd-opts ]<br>  show-cert &lt;filename_base&gt; [ cmd-opts ]<br>  show-ca [ cmd-opts ]<br>  import-req &lt;request_file_path&gt; &lt;short_basename&gt;<br>  export-p7 &lt;filename_base&gt; [ cmd-opts ]<br>  export-p8 &lt;filename_base&gt; [ cmd-opts ]<br>  export-p12 &lt;filename_base&gt; [ cmd-opts ]<br>  set-rsa-pass &lt;filename_base&gt; [ cmd-opts ]<br>  set-ec-pass &lt;filename_base&gt; [ cmd-opts ]<br>  upgrade &lt;<span class="hljs-built_in">type</span>&gt;<br></code></pre></td></tr></table></figure>
+
+<h6 id="2-初始化PKI生成PKI相关目录和文件"><a href="#2-初始化PKI生成PKI相关目录和文件" class="headerlink" title="(2).初始化PKI生成PKI相关目录和文件"></a>(2).初始化PKI生成PKI相关目录和文件</h6><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs sh">[root@openvpn-server 3]<span class="hljs-comment">#./easyrsa init-pki</span><br><br>init-pki complete; you may now create a CA or requests.<br>Your newly created PKI <span class="hljs-built_in">dir</span> is: /etc/openvpn/easy-rsa-server/3/pki<br>[root@openvpn-server 3]<span class="hljs-comment">#tree</span><br>.<br>├── easyrsa<br>├── openssl-easyrsa.cnf<br>├── pki <span class="hljs-comment">#生成新目录及相关文件</span><br>│   ├── private<br>│   └── reqs<br>├── vars<br>└── x509-types<br>    ├── ca<br>    ├── client<br>    ├── code-signing<br>    ├── COMMON<br>    ├── email<br>    ├── kdc<br>    ├── server<br>    └── serverClient<br><br>4 directories, 11 files<br></code></pre></td></tr></table></figure>
+
+<h6 id="3-创建CA机构环境"><a href="#3-创建CA机构环境" class="headerlink" title="(3).创建CA机构环境"></a>(3).创建CA机构环境</h6><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><code class="hljs sh">[root@openvpn-server 3]<span class="hljs-comment">#./easyrsa build-ca nopass #给CA颁发证书，nopass表示不给私钥增加密码</span><br><br>Note: using Easy-RSA configuration from: /etc/openvpn/easy-rsa-server/3.0.8/vars<br>Using SSL: openssl OpenSSL 1.1.1k  FIPS 25 Mar 2021<br>Generating RSA private key, 2048 bit long modulus (2 primes)<br>.................................+++++<br>...........................+++++<br>e is 65537 (0x010001)<br>You are about to be asked to enter information that will be incorporated<br>into your certificate request.<br>What you are about to enter is what is called a Distinguished Name or a DN.<br>There are quite a few fields but you can leave some blank<br>For some fields there will be a default value,<br>If you enter <span class="hljs-string">&#x27;.&#x27;</span>, the field will be left blank.<br>-----<br>Common Name (eg: your user, host, or server name) [Easy-RSA CA]:op^H^H<br><br>CA creation complete and you may now import and sign cert requests.<br>Your new CA certificate file <span class="hljs-keyword">for</span> publishing is at:<br>/etc/openvpn/easy-rsa-server/3/pki/ca.crt<br><br><br>[root@openvpn-server 3]<span class="hljs-comment">#tree </span><br>.<br>├── easyrsa<br>├── openssl-easyrsa.cnf<br>├── pki<br>│   ├── ca.crt <span class="hljs-comment">#生成ca自签名的证书的文件</span><br>│   ├── certs_by_serial<br>│   ├── index.txt<br>│   ├── index.txt.attr<br>│   ├── issued<br>│   ├── openssl-easyrsa.cnf<br>│   ├── private<br>│   │   └── ca.key<br>│   ├── renewed<br>│   │   ├── certs_by_serial<br>│   │   ├── private_by_serial<br>│   │   └── reqs_by_serial<br>│   ├── reqs<br>│   ├── revoked<br>│   │   ├── certs_by_serial<br>│   │   ├── private_by_serial<br>│   │   └── reqs_by_serial<br>│   └── serial<br>├── vars<br>└── x509-types<br>    ├── ca<br>    ├── client<br>    ├── code-signing<br>    ├── COMMON<br>    ├── email<br>    ├── kdc<br>    ├── server<br>    └── serverClient<br><br>14 directories, 17 files<br></code></pre></td></tr></table></figure>
+
+<h6 id="4-创建并颁发服务器证书"><a href="#4-创建并颁发服务器证书" class="headerlink" title="(4).创建并颁发服务器证书"></a>(4).创建并颁发服务器证书</h6><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-comment">#创建服务器证书申请文件，其中server是文件前缀</span><br>[root@openvpn-server 3]<span class="hljs-comment">#./easyrsa gen-req server nopass</span><br>[root@openvpn-server 3]<span class="hljs-comment">#tree </span><br>.<br>├── easyrsa<br>├── openssl-easyrsa.cnf<br>├── pki<br>│   ├── ca.crt<br>│   ├── certs_by_serial<br>│   ├── index.txt<br>│   ├── index.txt.attr<br>│   ├── issued<br>│   ├── openssl-easyrsa.cnf<br>│   ├── private<br>│   │   ├── ca.key<br>│   │   └── server.key <span class="hljs-comment">#生成私钥文件</span><br>│   ├── renewed<br>│   │   ├── certs_by_serial<br>│   │   ├── private_by_serial<br>│   │   └── reqs_by_serial<br>│   ├── reqs<br>│   │   └── server.req <span class="hljs-comment">#生成请求文件</span><br>│   ├── revoked<br>│   │   ├── certs_by_serial<br>│   │   ├── private_by_serial<br>│   │   └── reqs_by_serial<br>│   └── serial<br>├── vars<br>└── x509-types<br>    ├── ca<br>    ├── client<br>    ├── code-signing<br>    ├── COMMON<br>    ├── email<br>    ├── kdc<br>    ├── server<br>    └── serverClient<br><br>14 directories, 19 files<br><span class="hljs-comment">#颁发服务器证书，第一个server表示证书类型，第二个server表示请求文件名的前缀</span><br>[root@public-client 3]<span class="hljs-comment"># ./easyrsa sign server server</span><br><span class="hljs-comment">#验证结果</span><br>[root@openvpn-server 3]<span class="hljs-comment"># tree ./pki</span><br>./pki<br>├── ca.crt<br>├── certs_by_serial<br>│   └── F3F2210B468B539E5B4EFFD7B9AB9344.pem <span class="hljs-comment">#服务器证书文件</span><br>├── index.txt<br>├── index.txt.attr<br>├── index.txt.attr.old<br>├── index.txt.old<br>├── issued<br>│   └── server.crt  <span class="hljs-comment">#服务器证书文件</span><br>├── openssl-easyrsa.cnf<br>├── private<br>│   ├── ca.key<br>│   └── server.key<br>├── renewed<br>│   ├── certs_by_serial<br>│   ├── private_by_serial<br>│   └── reqs_by_serial<br>├── reqs<br>│   └── server.req<br>├── revoked<br>│   ├── certs_by_serial<br>│   ├── private_by_serial<br>│   └── reqs_by_serial<br>├── safessl-easyrsa.cnf<br>├── serial<br>└── serial.old<br><br>12 directories, 14 files<br></code></pre></td></tr></table></figure>
+
+<h6 id="5-创建Diffie-Hellman密钥"><a href="#5-创建Diffie-Hellman密钥" class="headerlink" title="(5).创建Diffie-Hellman密钥"></a>(5).创建Diffie-Hellman密钥</h6><p>diffie-Hellman算法是Whitefield Diffie和Martin Hellman在1976年公布的一种秘钥交换算法，它是一种建立秘钥的方法，而不是加密方法，所以秘钥必须和其他一种加密算法结合使用。这种秘钥交换技术的目的在于使两个用户安全的交换一个秘钥一遍后面的报文加密。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">[root@openvpn-server 3]<span class="hljs-comment"># ./easyrsa gen-dh</span><br></code></pre></td></tr></table></figure>
+
+<h6 id="6-配置客户端环境"><a href="#6-配置客户端环境" class="headerlink" title="(6).配置客户端环境"></a>(6).配置客户端环境</h6><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><code class="hljs sh">[root@openvpn-server 3]<span class="hljs-comment"># cp -a /usr/share/easy-rsa/ /etc/openvpn/easy-rsa-client</span><br>[root@openvpn-server 3]<span class="hljs-comment"># cd /etc/openvpn/easy-rsa-client/3</span><br><span class="hljs-comment">#生成客户端证书申请文件</span><br>[root@openvpn-server 3]<span class="hljs-comment"># ./easyrsa gen-req zzw nopass</span><br>[root@openvpn-server 3]<span class="hljs-comment"># tree</span><br>.<br>├── easyrsa<br>├── openssl-easyrsa.cnf<br>├── pki<br>│   ├── openssl-easyrsa.cnf<br>│   ├── private<br>│   │   └── zzw.key<br>│   ├── reqs<br>│   │   └── zzw.req <span class="hljs-comment">#客户端申请文件</span><br>│   └── safessl-easyrsa.cnf<br>└── x509-types<br>    ├── ca<br>    ├── client<br>    ├── code-signing<br>    ├── COMMON<br>    ├── email<br>    ├── kdc<br>    ├── server<br>    └── serverClient<br><br>4 directories, 14 files<br><span class="hljs-comment">#将客户端证书申请文件复制到CA的工作目录下</span><br>[root@openvpn-server 3]<span class="hljs-comment"># cd /etc/openvpn/easy-rsa-server/3</span><br>[root@openvpn-server 3]<span class="hljs-comment"># ./easyrsa import-req /etc/openvpn/easy-rsa-client/3/pki/reqs/zzw.req zzw</span><br>Note: using Easy-RSA configuration from: /etc/openvpn/easy-rsa-server/3.0.8/vars<br>Using SSL: openssl OpenSSL 1.1.1k  FIPS 25 Mar 2021<br><br>The request has been successfully imported with a short name of: zzw<br>You may now use this name to perform signing operations on this request.<br><span class="hljs-comment">#修改证书期限为180天</span><br>[root@openvpn-server 3]<span class="hljs-comment"># vim vars </span><br>set_var EASYRSA_CERT_EXPIRE     180<br><span class="hljs-comment">#颁发给客户端证书</span><br>[root@openvpn-server 3]<span class="hljs-comment"># ./easyrsa sign client zzw</span><br>[root@openvpn-server 3]<span class="hljs-comment"># tree ./pki</span><br>./pki<br>├── ca.crt<br>├── certs_by_serial<br>│   ├── CCE8210AB99BD0235AB0AA17D3C8ECAF.pem <span class="hljs-comment">#客户端证书</span><br>│   └── F3F2210B468B539E5B4EFFD7B9AB9344.pem <br>├── dh.pem<br>├── index.txt<br>├── index.txt.attr<br>├── index.txt.attr.old<br>├── index.txt.old<br>├── issued<br>│   ├── server.crt<br>│   └── zzw.crt <span class="hljs-comment">#客户端证书</span><br>├── openssl-easyrsa.cnf<br>├── private<br>│   ├── ca.key<br>│   └── server.key<br>├── renewed<br>│   ├── certs_by_serial<br>│   ├── private_by_serial<br>│   └── reqs_by_serial<br>├── reqs<br>│   ├── server.req<br>│   └── zzw.req<br>├── revoked<br>│   ├── certs_by_serial<br>│   ├── private_by_serial<br>│   └── reqs_by_serial<br>├── safessl-easyrsa.cnf<br>├── serial<br>└── serial.old<br><br>12 directories, 18 files<br></code></pre></td></tr></table></figure>
+
+<h6 id="7-将服务器对应证书私钥放入服务器对应目录"><a href="#7-将服务器对应证书私钥放入服务器对应目录" class="headerlink" title="(7).将服务器对应证书私钥放入服务器对应目录"></a>(7).将服务器对应证书私钥放入服务器对应目录</h6><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs sh">[root@openvpn-server 3]<span class="hljs-comment"># mkdir /etc/openvpn/certs; cp /etc/openvpn/easy-rsa-server/3/pki/ca.crt /etc/openvpn/certs/</span><br>[root@openvpn-server 3]<span class="hljs-comment"># cp  /etc/openvpn/easy-rsa-server/3/pki/issued/server.crt  /etc/openvpn/certs/</span><br>[root@openvpn-server 3]<span class="hljs-comment"># cp  /etc/openvpn/easy-rsa-server/3/pki/private/server.key  /etc/openvpn/certs/</span><br>[root@openvpn-server 3]<span class="hljs-comment"># cp  /etc/openvpn/easy-rsa-server/3/pki/dh.pem  /etc/openvpn/certs/</span><br>[root@openvpn-server 3]<span class="hljs-comment"># ll /etc/openvpn/certs/</span><br>total 20<br>-rw-------. 1 root root 1204 Nov  4 13:29 ca.crt<br>-rw-------. 1 root root  424 Nov  4 13:32 dh.pem<br>-rw-------. 1 root root 4608 Nov  4 13:30 server.crt<br>-rw-------. 1 root root 1704 Nov  4 13:31 server.key<br></code></pre></td></tr></table></figure>
+
+<h6 id="8-将客户端私钥证书放到对应服务器目录"><a href="#8-将客户端私钥证书放到对应服务器目录" class="headerlink" title="(8).将客户端私钥证书放到对应服务器目录"></a>(8).将客户端私钥证书放到对应服务器目录</h6><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs sh">[root@openvpn-server 3]<span class="hljs-comment"># mkdir /etc/openvpn/client/zzw;</span><br>[root@openvpn-server 3]<span class="hljs-comment"># cp /etc/openvpn/easy-rsa-server/3/pki/issued/zzw.crt /etc/openvpn/c</span><br>certs/  client/ <br>[root@openvpn-server 3]<span class="hljs-comment"># cp /etc/openvpn/easy-rsa-server/3/pki/issued/zzw.crt /etc/openvpn/client/zzw/              </span><br>[root@openvpn-server 3]<span class="hljs-comment"># cp /etc/openvpn/easy-rsa-server/3/pki/ca.crt /etc/openvpn/client/zzw/</span><br>[root@openvpn-server 3]<span class="hljs-comment"># cp /etc/openvpn/easy-rsa-client/3/pki/private/zzw.key /etc/openvpn/client/zzw/</span><br>[root@openvpn-server 3]<span class="hljs-comment"># ll /etc/openvpn/client/zzw/</span><br>total 16<br>-rw-------. 1 root root 1204 Nov  4 13:37 ca.crt<br>-rw-------. 1 root root 4485 Nov  4 13:37 zzw.crt<br>-rw-------. 1 root root 1704 Nov  4 13:38 zzw.key<br></code></pre></td></tr></table></figure>
+
+<h5 id="3-准备openvpn服务器配置文件"><a href="#3-准备openvpn服务器配置文件" class="headerlink" title="3.准备openvpn服务器配置文件"></a>3.准备openvpn服务器配置文件</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs sh">[root@openvpn-server ~]<span class="hljs-comment"># vim server.conf </span><br>port 1194<br>proto tcp<br>dev tun<br>ca /etc/openvpn/certs/ca.crt<br>cert /etc/openvpn/certs/server.crt<br>key /etc/openvpn/certs/server.key  <span class="hljs-comment"># This file should be kept secret</span><br>ca /etc/openvpn/certs/ca.crt<br>cert /etc/openvpn/certs/server.crt<br>key /etc/openvpn/certs/server.key  <span class="hljs-comment"># This file should be kept secret</span><br>dh /etc/openvpn/certs/dh.pem<br>server 10.8.0.0 255.255.255.0<br>push <span class="hljs-string">&quot;route 192.168.10.0 255.255.255.0&quot;</span><br>keepalive 10 120<br>cipher AES-256-CBC<br>compress lz4-v2<br>push <span class="hljs-string">&quot;compress lz4-v2&quot;</span><br>max-clients 2048<br>user openvpn<br>group openvpn<br>status /var/log/openvpn/openvpn-status.log<br>log-append  /var/log/openvpn/openvpn.log<br>verb 3<br>mute 20<br><span class="hljs-comment">#创建日志目录并修改所有者属性</span><br>[root@openvpn-server ~]<span class="hljs-comment"># mkdir /var/log/openvpn</span><br>[root@openvpn-server ~]<span class="hljs-comment"># chown openvpn.  /var/log/openvpn/</span><br></code></pre></td></tr></table></figure>
+
+<h5 id="4-启动VPN服务"><a href="#4-启动VPN服务" class="headerlink" title="4.启动VPN服务"></a>4.启动VPN服务</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-comment">#修改服务文件</span><br>[root@openvpn-server ~]<span class="hljs-comment"># vim /usr/lib/systemd/system/openvpn@.service </span><br>[Unit]<br>Description=OpenVPN Robust And Highly Flexible Tunneling Application On %I<br>After=network.target<br><br>[Service]<br>Type=notify<br>PrivateTmp=<span class="hljs-literal">true</span><br>ExecStart=/usr/sbin/openvpn --<span class="hljs-built_in">cd</span> /etc/openvpn/ --config %i.conf<br><br>[Install]<br>WantedBy=multi-user.target<br><span class="hljs-comment">#启动服务</span><br>[root@openvpn-server ~]<span class="hljs-comment"># systemctl enable --now openvpn@server</span><br>Created symlink /etc/systemd/system/multi-user.target.wants/openvpn@server.service → /usr/lib/systemd/system/openvpn@.service.<br><br></code></pre></td></tr></table></figure>
+
+<h5 id="5-验证服务状态"><a href="#5-验证服务状态" class="headerlink" title="5.验证服务状态"></a>5.验证服务状态</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-comment">#查看端口</span><br>[root@openvpn-server ~]<span class="hljs-comment"># ss -ntl</span><br>State          Recv-Q          Send-Q                   Local Address:Port                    Peer Address:Port         Process                               <br>LISTEN         0               32                             0.0.0.0:1194                         0.0.0.0:*   <br><span class="hljs-comment">#查看ip</span><br>[root@openvpn-server ~]<span class="hljs-comment"># ip a</span><br>1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000<br>    <span class="hljs-built_in">link</span>/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00<br>    inet 127.0.0.1/8 scope host lo<br>       valid_lft forever preferred_lft forever<br>    inet6 ::1/128 scope host <br>       valid_lft forever preferred_lft forever<br>2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq state UP group default qlen 1000<br>    <span class="hljs-built_in">link</span>/ether 00:0c:29:93:d4:f5 brd ff:ff:ff:ff:ff:ff<br>    inet 10.0.0.128/24 brd 10.0.0.255 scope global noprefixroute eth0<br>       valid_lft forever preferred_lft forever<br>    inet6 fe80::20c:29ff:fe93:d4f5/64 scope <span class="hljs-built_in">link</span> <br>       valid_lft forever preferred_lft forever<br>3: eth1: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq state UP group default qlen 1000<br>    <span class="hljs-built_in">link</span>/ether 00:0c:29:93:d4:ff brd ff:ff:ff:ff:ff:ff<br>    inet 192.168.10.128/24 brd 192.168.10.255 scope global noprefixroute eth1<br>       valid_lft forever preferred_lft forever<br>    inet6 fe80::20c:29ff:fe93:d4ff/64 scope <span class="hljs-built_in">link</span> <br>       valid_lft forever preferred_lft forever<br>4: tun0: &lt;POINTOPOINT,MULTICAST,NOARP,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel state UNKNOWN group default qlen 100<br>    <span class="hljs-built_in">link</span>/none <br>    inet 10.8.0.1 peer 10.8.0.2/32 scope global tun0<br>       valid_lft forever preferred_lft forever<br>    inet6 fe80::64cf:6afe:7224:482f/64 scope <span class="hljs-built_in">link</span> stable-privacy <br>       valid_lft forever preferred_lft forever<br>     <br><span class="hljs-comment">#查看路由</span><br>[root@openvpn-server ~]<span class="hljs-comment"># route -n</span><br>Kernel IP routing table<br>Destination     Gateway         Genmask         Flags Metric Ref    Use Iface<br>0.0.0.0         10.0.0.2        0.0.0.0         UG    100    0        0 eth0<br>0.0.0.0         192.168.10.1    0.0.0.0         UG    101    0        0 eth1<br>10.0.0.0        0.0.0.0         255.255.255.0   U     100    0        0 eth0<br>10.8.0.0        10.8.0.2        255.255.255.0   UG    0      0        0 tun0<br>10.8.0.2        0.0.0.0         255.255.255.255 UH    0      0        0 tun0<br>192.168.10.0    0.0.0.0         255.255.255.0   U     101    0        0 eth1<br><br></code></pre></td></tr></table></figure>
+
+<h5 id="6-准备客户端配置文件"><a href="#6-准备客户端配置文件" class="headerlink" title="6.准备客户端配置文件"></a>6.准备客户端配置文件</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs sh">vim /etc/openvpn/client/zzw/client.ovpn<br>client<br>dev tun<br>proto tcp<br>ca ca.crt<br>cert zzw.crt<br>key zzw.key  <span class="hljs-comment"># This file should be kept secret</span><br>remote 10.0.0.128 1194 <span class="hljs-comment">#填写地址或域名（最好写域名，防止ip地址变化）</span><br>cipher AES-256-CBC<br>compress lz4-v2<br>remote-cert-tls server<br>nobind<br>resolv-retry infinite<br>max-clients 2048<br>verb 3<br>mute 20<br></code></pre></td></tr></table></figure>
+
+<h5 id="7-公网客户通过openvpn连接内网主机"><a href="#7-公网客户通过openvpn连接内网主机" class="headerlink" title="7.公网客户通过openvpn连接内网主机"></a>7.公网客户通过openvpn连接内网主机</h5><h6 id="1-安装openvpn客户端"><a href="#1-安装openvpn客户端" class="headerlink" title="(1).安装openvpn客户端"></a>(1).安装openvpn客户端</h6><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">[root@public-client ~]<span class="hljs-comment">#yum -y install openvpn</span><br></code></pre></td></tr></table></figure>
+
+<h6 id="2-从服务器端下载客户端的公钥私钥和CA证书还有客户端配置文件"><a href="#2-从服务器端下载客户端的公钥私钥和CA证书还有客户端配置文件" class="headerlink" title="(2).从服务器端下载客户端的公钥私钥和CA证书还有客户端配置文件"></a>(2).从服务器端下载客户端的公钥私钥和CA证书还有客户端配置文件</h6><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs sh">[root@public-client ~]<span class="hljs-comment">#scp 10.0.0.128:/etc/openvpn/client/zzw/*  /etc/openvpn/</span><br>root@10.0.0.128<span class="hljs-string">&#x27;s password: </span><br><span class="hljs-string">ca.crt                                                                                                100% 1204     1.5MB/s   00:00    </span><br><span class="hljs-string">client.ovpn                                                                                           100%  237   275.5KB/s   00:00    </span><br><span class="hljs-string">zzw.crt                                                                                               100% 4485     4.7MB/s   00:00    </span><br><span class="hljs-string">zzw.key                                                                                               100% 1704     1.7MB/s   00:00    </span><br><span class="hljs-string">[root@public-client ~]#ll /etc/openvpn/</span><br><span class="hljs-string">total 20</span><br><span class="hljs-string">-rw------- 1 root root    1204 Nov  4 14:55 ca.crt</span><br><span class="hljs-string">drwxr-x--- 2 root openvpn    6 Mar 18  2022 client</span><br><span class="hljs-string">-rw-r--r-- 1 root root     237 Nov  4 14:55 client.ovpn</span><br><span class="hljs-string">drwxr-x--- 2 root openvpn    6 Mar 18  2022 server</span><br><span class="hljs-string">-rw------- 1 root root    4485 Nov  4 14:55 zzw.crt</span><br><span class="hljs-string">-rw------- 1 root root    1704 Nov  4 14:55 zzw.key</span><br></code></pre></td></tr></table></figure>
+
+<h6 id="3-启动openvpn客户端"><a href="#3-启动openvpn客户端" class="headerlink" title="(3).启动openvpn客户端"></a>(3).启动openvpn客户端</h6><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs sh">[root@public-client ~]<span class="hljs-comment">#openvpn --daemon --cd /etc/openvpn --config client.ovpn --log-append /var/log/openvpn.log</span><br>--daemon <span class="hljs-comment">#以daemon方式启动</span><br>--<span class="hljs-built_in">cd</span> <span class="hljs-built_in">dir</span> <span class="hljs-comment">#配置文件目录</span><br>--config file <span class="hljs-comment">#客户端配置文件</span><br>--log-append file <span class="hljs-comment">#日志文件，若不存在会自动建立</span><br></code></pre></td></tr></table></figure>
+
+<h6 id="4-在openvpn服务器端开启ip转发功能"><a href="#4-在openvpn服务器端开启ip转发功能" class="headerlink" title="(4).在openvpn服务器端开启ip转发功能"></a>(4).在openvpn服务器端开启ip转发功能</h6><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-comment">#开启ip转发功能</span><br>[root@openvpn-server ~]<span class="hljs-comment"># echo net.ipv4.ip_forward=1 &gt;&gt;/etc/sysctl.conf </span><br>[root@openvpn-server ~]<span class="hljs-comment"># sysctl -p</span><br>net.ipv4.ip_forward = 1<br></code></pre></td></tr></table></figure>
+
+<p>(5).在内网主机添加路由将目标地址为openvpn路由的下一跳都指向openvpn服务器</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">[root@private-client ~]<span class="hljs-comment"># ip route add 10.8.0.0/24 via 192.168.10.128</span><br></code></pre></td></tr></table></figure>
+
+<p>(6).在公网客户端上访问内网主机</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs sh">[root@public-client ~]<span class="hljs-comment">#ping 192.168.10.133</span><br>PING 192.168.10.133 (192.168.10.133) 56(84) bytes of data.<br>64 bytes from 192.168.10.133: icmp_seq=1 ttl=63 time=0.714 ms<br>64 bytes from 192.168.10.133: icmp_seq=2 ttl=63 time=0.558 ms<br>64 bytes from 192.168.10.133: icmp_seq=3 ttl=63 time=0.684 ms<br>64 bytes from 192.168.10.133: icmp_seq=4 ttl=63 time=0.624 ms<br>64 bytes from 192.168.10.133: icmp_seq=5 ttl=63 time=0.752 ms<br>64 bytes from 192.168.10.133: icmp_seq=6 ttl=63 time=0.893 ms<br>64 bytes from 192.168.10.133: icmp_seq=7 ttl=63 time=0.591 ms<br>64 bytes from 192.168.10.133: icmp_seq=8 ttl=63 time=0.624 ms<br>64 bytes from 192.168.10.133: icmp_seq=9 ttl=63 time=0.548 ms<br>64 bytes from 192.168.10.133: icmp_seq=10 ttl=63 time=0.922 ms<br><span class="hljs-comment">#ssh连接登录内网主机</span><br>[root@public-client ~]<span class="hljs-comment">#ssh 192.168.10.133</span><br>Warning: Permanently added <span class="hljs-string">&#x27;192.168.10.133&#x27;</span> (ECDSA) to the list of known hosts.<br>root@192.168.10.133<span class="hljs-string">&#x27;s password: </span><br><span class="hljs-string">Last login: Fri Nov  4 09:59:49 2022 from 192.168.10.1</span><br><span class="hljs-string">[root@private-client ~]# ip a</span><br><span class="hljs-string">1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000</span><br><span class="hljs-string">    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00</span><br><span class="hljs-string">    inet 127.0.0.1/8 scope host lo</span><br><span class="hljs-string">       valid_lft forever preferred_lft forever</span><br><span class="hljs-string">    inet6 ::1/128 scope host </span><br><span class="hljs-string">       valid_lft forever preferred_lft forever</span><br><span class="hljs-string">2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq state UP group default qlen 1000</span><br><span class="hljs-string">    link/ether 00:0c:29:5f:5a:19 brd ff:ff:ff:ff:ff:ff</span><br><span class="hljs-string">    inet 192.168.10.133/24 brd 192.168.10.255 scope global noprefixroute eth0</span><br><span class="hljs-string">       valid_lft forever preferred_lft forever</span><br><span class="hljs-string">    inet6 fe80::20c:29ff:fe5f:5a19/64 scope link </span><br><span class="hljs-string">       valid_lft forever preferred_lft forever</span><br></code></pre></td></tr></table></figure>
+
+
+
+<p><img src="image-20221104151223446.png" srcset="/img/loading.gif" lazyload alt="image-20221104151223446"></p>
+<p>实验成功，通过openvpn的配置实现了公网客户端和内网的互通（peer to site）</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/sql-xtrabackup-mysql%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6-mycat%E8%AF%BB%E5%86%99%E5%88%86%E7%A6%BB-openvpn/">sql xtrabackup mysql主从复制 mycat读写分离 openvpn</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/03/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%9F%A5%E8%AF%86%E7%82%B9/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">数据结构知识点</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/09/23/%E7%AC%AC%E4%BA%94%E5%91%A8%E4%BD%9C%E4%B8%9A/">
+                        <span class="hidden-mobile">第五周作业</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

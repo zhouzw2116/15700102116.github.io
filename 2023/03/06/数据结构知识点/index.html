@@ -1,0 +1,517 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="背景">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构知识点">
+<meta property="og:url" content="http://example.com/2023/03/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%9F%A5%E8%AF%86%E7%82%B9/index.html">
+<meta property="og:site_name" content="zhou&#39;s blog">
+<meta property="og:description" content="背景">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2023/03/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%9F%A5%E8%AF%86%E7%82%B9/image-20230222153932899.png">
+<meta property="og:image" content="http://example.com/2023/03/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%9F%A5%E8%AF%86%E7%82%B9/image-20230222160506729.png">
+<meta property="og:image" content="http://example.com/2023/03/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%9F%A5%E8%AF%86%E7%82%B9/image-20230222193523069.png">
+<meta property="og:image" content="http://example.com/2023/03/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%9F%A5%E8%AF%86%E7%82%B9/image-20230222194833051.png">
+<meta property="og:image" content="http://example.com/2023/03/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%9F%A5%E8%AF%86%E7%82%B9/image-20230223212257342.png">
+<meta property="og:image" content="http://example.com/2023/03/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%9F%A5%E8%AF%86%E7%82%B9/image-20230223221257728.png">
+<meta property="og:image" content="http://example.com/2023/03/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%9F%A5%E8%AF%86%E7%82%B9/image-20230225210357777.png">
+<meta property="og:image" content="http://example.com/2023/03/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%9F%A5%E8%AF%86%E7%82%B9/image-20230304151736123.png">
+<meta property="og:image" content="http://example.com/2023/03/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%9F%A5%E8%AF%86%E7%82%B9/image-20230304151802383.png">
+<meta property="og:image" content="http://example.com/2023/03/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%9F%A5%E8%AF%86%E7%82%B9/image-20230305104219559.png">
+<meta property="og:image" content="http://example.com/2023/03/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%9F%A5%E8%AF%86%E7%82%B9/image-20230306183603283.png">
+<meta property="og:image" content="http://example.com/2023/03/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%9F%A5%E8%AF%86%E7%82%B9/image-20230306192411576.png">
+<meta property="og:image" content="http://example.com/2023/03/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%9F%A5%E8%AF%86%E7%82%B9/image-20230306200918322-16781050239191.png">
+<meta property="article:published_time" content="2023-03-06T20:14:54.000Z">
+<meta property="article:modified_time" content="2023-03-12T14:24:54.728Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="考研 数据结构 算法 c语言">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/2023/03/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%9F%A5%E8%AF%86%E7%82%B9/image-20230222153932899.png">
+  
+  
+  <title>数据结构知识点 - zhou&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Home
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Tags
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="数据结构知识点">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2023-03-06 20:14" pubdate>
+        March 6, 2023 pm
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      6.5k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      55 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">数据结构知识点</h1>
+            
+            <div class="markdown-body">
+              <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><span id="more"></span>
+
+<h1 id="第一章绪论"><a href="#第一章绪论" class="headerlink" title="第一章绪论"></a>第一章绪论</h1><h3 id="1-1数据结构基本概念"><a href="#1-1数据结构基本概念" class="headerlink" title="1.1数据结构基本概念"></a>1.1数据结构基本概念</h3><h5 id="数据元素"><a href="#数据元素" class="headerlink" title="数据元素"></a>数据元素</h5><p>数据元素是数据的基本单位</p>
+<h5 id="数据结构的三要素"><a href="#数据结构的三要素" class="headerlink" title="数据结构的三要素"></a>数据结构的三要素</h5><p>数据逻辑结构，数据运算，数据的存储结构</p>
+<h5 id="数据的逻辑结构"><a href="#数据的逻辑结构" class="headerlink" title="数据的逻辑结构"></a>数据的逻辑结构</h5><p>集合，线性结构，树形结构，图形结构</p>
+<h5 id="数据的存储结构"><a href="#数据的存储结构" class="headerlink" title="数据的存储结构"></a>数据的存储结构</h5><p>顺序存储：逻辑上相邻元素物理存储单元也相邻，实现随机存取，但会产生外部碎片</p>
+<p>链式存储：借助指针，充分利用所有存储单元，占额外空间，且只能顺序存取</p>
+<p>索引存储：额外建立索引表（关键字+地址），速度快，占空间，增删较慢</p>
+<p>散列存储：根据关键字计算存储地址，速度快，取决于散列函数的选取（可能会造成地址冲突）</p>
+<h5 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h5><p>原子类型：不可再分（bool，int）</p>
+<p>结构类型：可在分（struct）</p>
+<p>抽象数据类型：抽象数据组织及与之相关的操作，就是定义了一个完整的数据结构</p>
+<p><img src="image-20230222153932899.png" srcset="/img/loading.gif" lazyload alt="image-20230222153932899"></p>
+<h3 id="1-2算法与算法评价"><a href="#1-2算法与算法评价" class="headerlink" title="1.2算法与算法评价"></a>1.2算法与算法评价</h3><h5 id="算法特性"><a href="#算法特性" class="headerlink" title="算法特性"></a>算法特性</h5><p>有穷性：有穷步之内结束，每一步执行有穷时间</p>
+<p>确定性：相同输入得到相同输出</p>
+<p>可行性</p>
+<p>输入：零或多个</p>
+<p>输出：一个或多个</p>
+<h5 id="好的算法要求"><a href="#好的算法要求" class="headerlink" title="好的算法要求"></a>好的算法要求</h5><p>正确性，可读性，健壮性（对非法输入可以做出处理），高效率与低存储量要求</p>
+<p><img src="image-20230222160506729.png" srcset="/img/loading.gif" lazyload alt="image-20230222160506729"></p>
+<h5 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h5><p><img src="image-20230222193523069.png" srcset="/img/loading.gif" lazyload alt="image-20230222193523069"></p>
+<h5 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h5><p><img src="image-20230222194833051.png" srcset="/img/loading.gif" lazyload alt="image-20230222194833051"></p>
+<h1 id="第二章线性表"><a href="#第二章线性表" class="headerlink" title="第二章线性表"></a>第二章线性表</h1><h3 id="2-1线性表定义和基本操作"><a href="#2-1线性表定义和基本操作" class="headerlink" title="2.1线性表定义和基本操作"></a>2.1线性表定义和基本操作</h3><h5 id="线性表及其特点"><a href="#线性表及其特点" class="headerlink" title="线性表及其特点"></a>线性表及其特点</h5><p>具有<strong>相同数据类型</strong>的n个<strong>数据元素</strong>的<strong>有限</strong>序列，n为表长，n=0表示空表</p>
+<p>特点：</p>
+<p>1.表中数据个数有限</p>
+<p>2.具有逻辑上的顺序性</p>
+<p>3.每个元素都是单个元素</p>
+<p>4.数据类型相同，意味着每个元素占相同大小的存储空间</p>
+<p>5.抽象性，仅讨论元素间的逻辑关系</p>
+<h5 id="线性表的基本操作"><a href="#线性表的基本操作" class="headerlink" title="线性表的基本操作"></a>线性表的基本操作</h5><p>Initlist(&amp;L)；初始化表</p>
+<p>Length(L)；返回表长</p>
+<p>LocateElem(L,e)；按值查找</p>
+<p>GetElem(L,i)；按位查找</p>
+<p>ListInsert(&amp;L,i,e);插入操作，在列表L的第i个位置插入元素e</p>
+<p>ListDelete(&amp;L,i,&amp;e);删除操作，删除列表L的第i个元素，并返回其值</p>
+<p>PrintList(&amp;L)；按从前到后依次打印L的所有元素</p>
+<p>Empty(L);判空操作</p>
+<p>DestroyList(&amp;L);销毁列表L，并释放其占用的空间</p>
+<p><img src="image-20230223212257342.png" srcset="/img/loading.gif" lazyload alt="image-20230223212257342"></p>
+<h3 id="2-2顺序表（顺序存储）"><a href="#2-2顺序表（顺序存储）" class="headerlink" title="2.2顺序表（顺序存储）"></a>2.2顺序表（顺序存储）</h3><h5 id="顺序表"><a href="#顺序表" class="headerlink" title="顺序表"></a>顺序表</h5><p>线性表的顺序存储</p>
+<p>sizeof(ElemType)c语言返回数据类型大小（字节）</p>
+<p><strong>实现(静态分配)：</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">define</span> maxsize 10<span class="hljs-comment">//最大长度</span></span><br><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span>&#123;</span><br>ElemType data[maxsize];<span class="hljs-comment">//用静态数组存放数据元素</span><br><span class="hljs-type">int</span> length;<span class="hljs-comment">//顺序表当前长度</span><br>&#125;Sqlist;<br></code></pre></td></tr></table></figure>
+
+<p><strong>实现(动态分配)：</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">define</span> initsize 10<span class="hljs-comment">//初始长度</span></span><br><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span>&#123;</span><br>ElemType *data;<span class="hljs-comment">//用动态数组存放数据元素的指针</span><br><span class="hljs-type">int</span> length;<span class="hljs-comment">//顺序表当前长度</span><br><span class="hljs-type">int</span> maxsize;<span class="hljs-comment">//定义最大长度</span><br>&#125;Sqlist;<br><br><br><span class="hljs-comment">//动态申请和释放内存空间（malloc和free需要#include&lt;stdlib.h&gt;头文件）</span><br>L.data=(ElemType *)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(ElemType)*initsize);<span class="hljs-comment">//malloc用于动态申请一整片连续内存空间，返回起始指针地址，需要强制转换</span><br><span class="hljs-built_in">free</span>(L.data);<span class="hljs-comment">//释放内存</span><br><br><span class="hljs-comment">//增加动态数组的大小</span><br><span class="hljs-type">void</span> <span class="hljs-title function_">IncreaseSize</span><span class="hljs-params">(Sqlist &amp;L,<span class="hljs-type">int</span> len)</span><br>&#123;<br>    <span class="hljs-type">int</span> *P=L.data;<br>    L,data=(<span class="hljs-type">int</span> *)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(<span class="hljs-type">int</span>)*(len+maxsize));<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;L.length;i++)<br>    &#123;<br>        L.data[i]=p[i];<br>    &#125;<br>    L.maxsize=L.maxsize+len;<br>    <span class="hljs-built_in">free</span>(p);<br>&#125;<br><br><span class="hljs-comment">//顺序表的插入</span><br><span class="hljs-type">bool</span> <span class="hljs-title function_">InsertList</span><span class="hljs-params">(Sqlist &amp;L,<span class="hljs-type">int</span> i,<span class="hljs-type">int</span> e)</span><br>&#123;<br>    <span class="hljs-keyword">if</span>(i&lt;<span class="hljs-number">1</span>||i&gt;length+<span class="hljs-number">1</span>)<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    <span class="hljs-keyword">if</span>(L.length&gt;=maxsize)<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j=L.length;j&gt;=i;j--)<span class="hljs-comment">//从后往前</span><br>    &#123;<br>        L.data[j]=L.data[j<span class="hljs-number">-1</span>];<br>    &#125;<br>    L.data[i<span class="hljs-number">-1</span>]=e;<br>    L.length++;<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>&#125;<span class="hljs-comment">//时间复杂度O(n)</span><br><br><span class="hljs-comment">//顺序表的删除</span><br><span class="hljs-type">bool</span> <span class="hljs-title function_">DeleteList</span><span class="hljs-params">(Sqlist &amp;L,<span class="hljs-type">int</span> i,<span class="hljs-type">int</span> &amp;e)</span><br>&#123;<br>    <span class="hljs-keyword">if</span>(i&lt;<span class="hljs-number">1</span>||i&gt;length)<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    <span class="hljs-keyword">if</span>(L.length==<span class="hljs-number">0</span>)<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    e=L.data[i<span class="hljs-number">-1</span>];<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j=i;j&lt;L.length;j++)<span class="hljs-comment">//从前往后</span><br>    &#123;<br>        L.data[j<span class="hljs-number">-1</span>]=L.data[j];<br>    &#125;<br>    L.length--;<br>    <span class="hljs-keyword">return</span> ture;<br>&#125;<span class="hljs-comment">//时间复杂度O(n)</span><br><br><span class="hljs-comment">//顺序表的按位查找(动态)</span><br><span class="hljs-type">int</span> <span class="hljs-title function_">GetElem</span><span class="hljs-params">(Sqlist L,<span class="hljs-type">int</span> i)</span><br>&#123;<br>    <span class="hljs-keyword">if</span>(i&lt;<span class="hljs-number">1</span>||i&gt;length)<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    <span class="hljs-keyword">return</span> L.data[i<span class="hljs-number">-1</span>];<br>&#125;<span class="hljs-comment">//时间复杂度O(1)</span><br><br><span class="hljs-comment">//按值查找(结构体相等意思是所有分量要相等，c++可以使用==判断结构体是否相等，c语言不可以)</span><br><span class="hljs-type">int</span> <span class="hljs-title function_">LocateElem</span><span class="hljs-params">(Sqlist L,<span class="hljs-type">int</span> e)</span><br>&#123;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;L.length;i++)<br>    &#123;<br>        <span class="hljs-keyword">if</span>(L.data[i]==e)<br>            <span class="hljs-keyword">return</span> i+<span class="hljs-number">1</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<span class="hljs-comment">//时间复杂度O(n)</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>特点</strong></p>
+<p>1.随机访问，能在O(1)时间内找到第i个元素</p>
+<p>2.存储密度高</p>
+<p>3.拓展容量不方便</p>
+<p>4.插入，删除元素不方便</p>
+<p><img src="image-20230223221257728.png" srcset="/img/loading.gif" lazyload alt="image-20230223221257728"></p>
+<p><img src="image-20230225210357777.png" srcset="/img/loading.gif" lazyload alt="image-20230225210357777"></p>
+<h3 id="2-3链表-链式存储"><a href="#2-3链表-链式存储" class="headerlink" title="2.3链表(链式存储)"></a>2.3链表(链式存储)</h3><h4 id="2-3-1单链表"><a href="#2-3-1单链表" class="headerlink" title="2.3.1单链表"></a>2.3.1单链表</h4><p>线性表的链式存储就是单链表</p>
+<p>实现：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Lnode</span> &#123;</span><br>    ElemType data;<br>    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Lnode</span> *<span class="hljs-title">next</span>;</span><br>&#125;Lnode,*Linklist;<br><br><span class="hljs-comment">//初始化单链表（不带头结点）</span><br><span class="hljs-type">bool</span> <span class="hljs-title function_">Initlist</span><span class="hljs-params">(Linklist &amp;L)</span><br>&#123;<br>    L=<span class="hljs-literal">NULL</span>;<span class="hljs-comment">//空表没数据，同时可以防止脏数据</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>&#125;<br><br><span class="hljs-comment">//初始化单链表（带头结点）</span><br><span class="hljs-type">bool</span> <span class="hljs-title function_">Initlist</span><span class="hljs-params">(Linklist &amp;L)</span><br>&#123;<br>    L=(Lnode *)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(Lnode));<span class="hljs-comment">//分配一个头结点</span><br>    <span class="hljs-keyword">if</span>(L==<span class="hljs-literal">NULL</span>)<span class="hljs-comment">//内存不足</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    L-&gt;next=<span class="hljs-literal">NULL</span>;<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>&#125;<br><br><br><span class="hljs-comment">//获取单链表L的第i个节点，Lnode *L和Linklist L是等价的，但是前者强调L是个节点，后者强调L是个单链表</span><br>Lnode *<span class="hljs-title function_">GetElem</span><span class="hljs-params">(Linklist L,<span class="hljs-type">int</span> i)</span><br>&#123;<br>    <span class="hljs-keyword">if</span>(i==<span class="hljs-number">0</span>)<br>        <span class="hljs-keyword">return</span> L;<br>    <span class="hljs-keyword">if</span>(i&lt;<span class="hljs-number">0</span>)<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">NULL</span>;<br>    <span class="hljs-type">int</span> j=<span class="hljs-number">1</span>;<br>    Lnode *p=L-&gt;next;<br>    <span class="hljs-keyword">while</span>(p!=<span class="hljs-literal">NULL</span>&amp;&amp;j&lt;i)<br>    &#123;<br>        p=p-&gt;next;<br>        j++;<br>    &#125;<br>    <span class="hljs-keyword">return</span> p;<br>&#125;<br><span class="hljs-comment">//在第i个位置插入元素e(带头节点)</span><br><span class="hljs-type">bool</span> <span class="hljs-title function_">Insertlist</span><span class="hljs-params">(Linklist &amp;L,<span class="hljs-type">int</span> i,ElemType e)</span><br>&#123;<br>    <span class="hljs-keyword">if</span>(i&lt;<span class="hljs-number">1</span>)<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    <span class="hljs-type">int</span> j=<span class="hljs-number">0</span>;<br>    Lnode *p=L;<br>    <span class="hljs-keyword">while</span> (p!=<span class="hljs-literal">NULL</span>&amp;&amp;j&lt;i<span class="hljs-number">-1</span>)<span class="hljs-comment">//找到第i-1个节点</span><br>    &#123;<br>        p=p-&gt;next;<br>        j++<br>    &#125;<br>    <span class="hljs-keyword">if</span>(p==<span class="hljs-literal">NULL</span>)<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    Lnode *s=(Lnode*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(Lnode));<span class="hljs-comment">//结构体大小未知，需要动态分配内存</span><br>    s-&gt;next=p-&gt;next;<br>    s-&gt;data=e;<br>    p-&gt;next=s;<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;   <br>&#125;<br><br><span class="hljs-comment">//在第i个位置插入元素e(不带头节点)</span><br><span class="hljs-type">bool</span> <span class="hljs-title function_">Insertlist</span><span class="hljs-params">(Linklist &amp;L,<span class="hljs-type">int</span> i,ElemType e)</span><br>&#123;<br>    <span class="hljs-keyword">if</span>(i&lt;<span class="hljs-number">1</span>)<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    <span class="hljs-keyword">if</span>(i==<span class="hljs-number">1</span>)<span class="hljs-comment">//需要针对第一个节点单独操作，不如带头节点的方便</span><br>    &#123;<br>        Lnode *s=(Lnode*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(Lnode));<br>    	s-&gt;next=L;<br>    	s-&gt;data=e;<br>    	L=s;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>    &#125;<br>    <span class="hljs-type">int</span> j=<span class="hljs-number">0</span>;<br>    Lnode *p=L;<br>    <span class="hljs-keyword">while</span> (p!=<span class="hljs-literal">NULL</span>&amp;&amp;j&lt;i<span class="hljs-number">-1</span>)<br>    &#123;<br>        p=p-&gt;next;<br>        j++<br>    &#125;<br>    <span class="hljs-keyword">if</span>(p==<span class="hljs-literal">NULL</span>)<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    Lnode *s=(Lnode*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(Lnode));<br>    s-&gt;next=p-&gt;next;<br>    s-&gt;data=e;<br>    p-&gt;next=s;<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;   <br>&#125;<br><br><span class="hljs-comment">//节点p的后插</span><br><span class="hljs-type">bool</span> <span class="hljs-title function_">Insertnextnode</span><span class="hljs-params">(Lnode *p,Elemtype e)</span><br>&#123;<br>    <span class="hljs-keyword">if</span>(p==<span class="hljs-literal">NULL</span>)<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    Lnode *s=(Lnode*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(Lnode));<br>    s-&gt;data=e;<br>    s-&gt;next=p-&gt;next;<br>    p-&gt;next=s;<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>&#125;<br><br><span class="hljs-comment">//节点p的前插</span><br><span class="hljs-type">bool</span> <span class="hljs-title function_">Insertprenextnode</span><span class="hljs-params">(Lnode *p,Elemtype e)</span><br>&#123;<br>    <span class="hljs-keyword">if</span>(p==<span class="hljs-literal">NULL</span>)<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    Lnode *s=(Lnode*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(Lnode));<br>    s-&gt;next=p-&gt;next;<br>    p-&gt;next=s;<br>    s-&gt;data=p-&gt;data;<br>    p-&gt;data=e;<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>&#125;<br><br><span class="hljs-comment">//删除节点（删除节点时注意要释放内存）</span><br><span class="hljs-type">bool</span> <span class="hljs-title function_">deletenode</span><span class="hljs-params">(Linklist &amp;L,<span class="hljs-type">int</span> i,Elemtype e)</span><br>&#123;<br>    <span class="hljs-keyword">if</span>(i&lt;<span class="hljs-number">1</span>)<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    <span class="hljs-type">int</span> j=<span class="hljs-number">0</span>;<br>    Lnode *p=L;<br>    <span class="hljs-keyword">while</span> (p!=<span class="hljs-literal">NULL</span>&amp;&amp;j&lt;i<span class="hljs-number">-1</span>)<br>    &#123;<br>        p=p-&gt;next;<br>        j++<br>    &#125;<br>    <span class="hljs-keyword">if</span>(p==<span class="hljs-literal">NULL</span>)<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    Lnode *q=p-&gt;next;<br>    p-&gt;next=q-&gt;next;<br>    e=q-&gt;data;<br>    <span class="hljs-built_in">free</span>(q);<span class="hljs-comment">//删除节点时注意要释放内存</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>&#125;<br><span class="hljs-comment">//删除节点</span><br><span class="hljs-type">bool</span> <span class="hljs-title function_">deletenode2</span><span class="hljs-params">(Lnode *p)</span><br>&#123;<br>    <span class="hljs-keyword">if</span>(p==<span class="hljs-literal">NULL</span>)<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    Lnode *q=p-&gt;next;<br>    p-&gt;data=q-&gt;data;<br>    p-&gt;next=q-&gt;next;<br>    <span class="hljs-built_in">free</span>(q);<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>&#125;<br><br><span class="hljs-comment">//尾插法建立单链表（顺序）</span><br>Linklist <span class="hljs-title function_">List_tailinsert</span><span class="hljs-params">(Linklist &amp;L)</span><br>&#123;<br>    <span class="hljs-type">int</span> x;<br>    L=(Lnode *)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(Lnode));<br>    Lnode *s,*r=L;<br>    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>,&amp;x);<br>    <span class="hljs-keyword">while</span>(x!=q)<br>    &#123;<br>        LinkList s=(Lnode *)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(Lnode));<br>        s-&gt;data=x;<br>        r-&gt;next=s;<br>        r=s;<br>        <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>,&amp;x);<br>    &#125;<br>    r-&gt;next=<span class="hljs-literal">NULL</span>;<br>    <span class="hljs-keyword">return</span> L;<br>&#125;<br><br>Linklist <span class="hljs-title function_">List_headinsert</span><span class="hljs-params">(Linklist &amp;L)</span><span class="hljs-comment">//头插法（逆序，可实现链表的逆置）</span><br>&#123;<br>    <span class="hljs-type">int</span> x;<br>    Lnode *s;<br>    L=(Lnode *)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(Lnode));<br>    L-&gt;next=<span class="hljs-literal">NULL</span>;<span class="hljs-comment">//没有这句可能最后一个节点指向未知内存</span><br>    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>,x);<br>    <span class="hljs-keyword">while</span>(x!=q)<br>    &#123;<br>        s=(Lnode*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(Lnode));<br>        s-&gt;data=x;<br>        s-&gt;next=L-&gt;next;<br>        L-&gt;next=s;<br>        <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>,x);<br>    &#125;<br>    <span class="hljs-keyword">return</span> L;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><img src="image-20230304151736123.png" srcset="/img/loading.gif" lazyload alt="image-20230304151736123"></p>
+<p><img src="image-20230304151802383.png" srcset="/img/loading.gif" lazyload alt="image-20230304151802383"></p>
+<p>!(%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/image-20230305104139277.png)</p>
+<p><img src="image-20230305104219559.png" srcset="/img/loading.gif" lazyload alt="image-20230305104219559"></p>
+<p><img src="image-20230306183603283.png" srcset="/img/loading.gif" lazyload alt="image-20230306183603283"></p>
+<p><img src="image-20230306192411576.png" srcset="/img/loading.gif" lazyload alt="image-20230306192411576"></p>
+<h4 id="2-3-2双链表"><a href="#2-3-2双链表" class="headerlink" title="2.3.2双链表"></a>2.3.2双链表</h4><p>在单链表的基础上外加指向前驱结点的指针</p>
+<p>实现</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Dnode</span> &#123;</span><br>    ElemType data;<br>    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Dnode</span> *<span class="hljs-title">next</span>;</span><br>    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Dnode</span> *<span class="hljs-title">prior</span>;</span><br>&#125;Dnode,*Dinklist;<br><br><span class="hljs-comment">//节点p的后插</span><br><span class="hljs-type">bool</span> <span class="hljs-title function_">Insertnextnode</span><span class="hljs-params">(Dnode *p,Dnode *s)</span><br>&#123;<br>    <span class="hljs-keyword">if</span>(p==<span class="hljs-literal">NULL</span>||s==<span class="hljs-literal">NULL</span>)<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    s-&gt;next=p-&gt;next;<br>    <span class="hljs-keyword">if</span>(p-&gt;next!=<span class="hljs-literal">NULL</span>)<span class="hljs-comment">//如果p-&gt;next不是空节点，才需要给prior赋值</span><br>        p-&gt;next-&gt;prior=s;<br>    p-&gt;next=s;<br>    s-&gt;prior=p;<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>&#125;<br><br><span class="hljs-comment">//节点p的前插，可以通过找到p的前驱节点并实现其后插操作实现</span><br><br><br><span class="hljs-comment">//删除节点（删除节点时注意要释放内存）</span><br><span class="hljs-type">bool</span> <span class="hljs-title function_">deletenode</span> <span class="hljs-params">(Dnode *p;)</span><br>&#123;<br>    <span class="hljs-keyword">if</span>(p==<span class="hljs-literal">NULL</span>)<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    Dnode *q=p-&gt;next;<br>    <span class="hljs-keyword">if</span>(q!=<span class="hljs-literal">NULL</span>)<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    p-&gt;next=q-&gt;next;<br>    <span class="hljs-keyword">if</span>(q-&gt;next!=<span class="hljs-literal">NULL</span>)<span class="hljs-comment">//如果q不是最后一个节点</span><br>        q-&gt;next-&gt;prior=p;<br>    <span class="hljs-built_in">free</span>(q);<span class="hljs-comment">//删除节点时注意要释放内存</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>&#125;<br><span class="hljs-comment">//销毁链表</span><br><span class="hljs-type">bool</span> <span class="hljs-title function_">DestroyList</span><span class="hljs-params">(Dlinklist &amp;L)</span><br>&#123;<br>    <span class="hljs-keyword">while</span>(L-&gt;next!=<span class="hljs-literal">NULL</span>)<br>       deletenode(L);<br>   	<span class="hljs-built_in">free</span>(L);<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+<p><img src="image-20230306200918322-16781050239191.png" srcset="/img/loading.gif" lazyload alt="image-20230306200918322"></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E8%80%83%E7%A0%94-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95-c%E8%AF%AD%E8%A8%80/">考研 数据结构 算法 c语言</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/10/26/%E7%AC%AC%E5%85%AD%E5%91%A8%E4%BD%9C%E4%B8%9A/">
+                        <span class="hidden-mobile">第六周作业</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

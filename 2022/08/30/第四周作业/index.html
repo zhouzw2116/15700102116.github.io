@@ -1,0 +1,584 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="背景">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第四周作业">
+<meta property="og:url" content="http://example.com/2022/08/30/%E7%AC%AC%E5%9B%9B%E5%91%A8%E4%BD%9C%E4%B8%9A/index.html">
+<meta property="og:site_name" content="zhou&#39;s blog">
+<meta property="og:description" content="背景">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2022/08/30/%E7%AC%AC%E5%9B%9B%E5%91%A8%E4%BD%9C%E4%B8%9A/image-20220905105843387.png">
+<meta property="og:image" content="http://example.com/2022/08/30/%E7%AC%AC%E5%9B%9B%E5%91%A8%E4%BD%9C%E4%B8%9A/image-20220905110953967.png">
+<meta property="og:image" content="https://img-blog.csdn.net/20180907200453974?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjI1NTY2Ng==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="http://example.com/2022/08/30/%E7%AC%AC%E5%9B%9B%E5%91%A8%E4%BD%9C%E4%B8%9A/image-20220905133651698.png">
+<meta property="og:image" content="http://example.com/2022/08/30/%E7%AC%AC%E5%9B%9B%E5%91%A8%E4%BD%9C%E4%B8%9A/image-20220905134152600.png">
+<meta property="og:image" content="http://example.com/2022/08/30/%E7%AC%AC%E5%9B%9B%E5%91%A8%E4%BD%9C%E4%B8%9A/image-20220905145931321.png">
+<meta property="og:image" content="http://example.com/2022/08/30/%E7%AC%AC%E5%9B%9B%E5%91%A8%E4%BD%9C%E4%B8%9A/image-20220905145912988.png">
+<meta property="og:image" content="http://example.com/2022/08/30/%E7%AC%AC%E5%9B%9B%E5%91%A8%E4%BD%9C%E4%B8%9A/image-20220905150147499.png">
+<meta property="og:image" content="http://example.com/2022/08/30/%E7%AC%AC%E5%9B%9B%E5%91%A8%E4%BD%9C%E4%B8%9A/image-20220905151314765.png">
+<meta property="og:image" content="http://example.com/2022/08/30/%E7%AC%AC%E5%9B%9B%E5%91%A8%E4%BD%9C%E4%B8%9A/image-20220905151724059.png">
+<meta property="article:published_time" content="2022-08-30T05:34:26.000Z">
+<meta property="article:modified_time" content="2022-09-05T07:17:25.523Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="定时任务at和cron，进程和内存，启动流程，systemd，内核编译，awk">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/2022/08/30/%E7%AC%AC%E5%9B%9B%E5%91%A8%E4%BD%9C%E4%B8%9A/image-20220905105843387.png">
+  
+  
+  <title>第四周作业 - zhou&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Home
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Tags
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="第四周作业">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-08-30 05:34" pubdate>
+        August 30, 2022 am
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      5.2k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      44 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">第四周作业</h1>
+            
+            <div class="markdown-body">
+              <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><span id="more"></span>
+
+<h2 id="定时任务"><a href="#定时任务" class="headerlink" title="定时任务"></a>定时任务</h2><h4 id="一次性任务at命令"><a href="#一次性任务at命令" class="headerlink" title="一次性任务at命令"></a>一次性任务at命令</h4><p>*来自at包，依赖atd服务</p>
+<p>*at队列存放在/var/spool/at目录，Ubantu存放在/var/spool/cron/atjobs目录中</p>
+<p>*执行任务是PATH变量的值和当前定义任务的用户身份一致</p>
+<h5 id="at用法"><a href="#at用法" class="headerlink" title="at用法"></a>at用法</h5><figure class="highlight prolog"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><pre><code class="hljs prolog">#at -h<br><span class="hljs-symbol">Usage</span>: at [-<span class="hljs-symbol">V</span>] [-q x] [-f file] [-mMlbv] timespec ...<br>       at [-<span class="hljs-symbol">V</span>] [-q x] [-f file] [-mMlbv] -t time<br>       at -c job ...<br>       atq [-<span class="hljs-symbol">V</span>] [-q x]<br>       at [ -rd ] job ...<br>       atrm [-<span class="hljs-symbol">V</span>] job ...<br>       batch<br></code></pre></td></tr></table></figure>
+
+<h5 id="at使用范例"><a href="#at使用范例" class="headerlink" title="at使用范例"></a>at使用范例</h5><figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs dos"><span class="hljs-built_in">echo</span> “touch a.txt&quot; |<span class="hljs-built_in">at</span> <span class="hljs-number">14</span>:<span class="hljs-number">00</span> <span class="hljs-number">2022</span>-<span class="hljs-number">08</span>-<span class="hljs-number">30</span> #在<span class="hljs-number">2022</span>-<span class="hljs-number">08</span>-<span class="hljs-number">30</span>下午<span class="hljs-number">2</span>点创建a.txt文本文件<br><br><span class="hljs-built_in">at</span> noon#交互式执行，在中午执行<span class="hljs-built_in">ping</span>命令，并将结果重定向至<span class="hljs-built_in">at</span>.txt<br><span class="hljs-function">warning: <span class="hljs-title">commands</span> <span class="hljs-title">will</span> <span class="hljs-title">be</span> <span class="hljs-title">executed</span> <span class="hljs-title">using</span> /<span class="hljs-title">bin</span>/<span class="hljs-title">sh</span></span><br><span class="hljs-function"><span class="hljs-title">at</span>&gt; <span class="hljs-title">ping</span> 127.0.0.1 &amp;&gt; <span class="hljs-title">at.txt</span></span><br><span class="hljs-function"><span class="hljs-title">at</span>&gt; &lt;<span class="hljs-title">EOT</span>&gt;</span><br><span class="hljs-function"></span><br><span class="hljs-function"><span class="hljs-title">at</span> <span class="hljs-title">now</span> + 5 <span class="hljs-title">hours</span> &lt;<span class="hljs-title">at.txt</span>#在从现在开始5小时以后执行<span class="hljs-title">at.txt</span>里面的命令</span><br><span class="hljs-function"></span><br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="周期性计划任务cron命令"><a href="#周期性计划任务cron命令" class="headerlink" title="周期性计划任务cron命令"></a>周期性计划任务cron命令</h4><p>*来自主程序包cronie，依赖crond服务</p>
+<h5 id="系统cron计划任务"><a href="#系统cron计划任务" class="headerlink" title="系统cron计划任务"></a>系统cron计划任务</h5><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs awk">cat <span class="hljs-regexp">/etc/</span>crontab <br>SHELL=<span class="hljs-regexp">/bin/</span>bash<br>PATH=<span class="hljs-regexp">/sbin:/</span>bin:<span class="hljs-regexp">/usr/</span>sbin:<span class="hljs-regexp">/usr/</span>bin<br>MAILTO=root<br><br><span class="hljs-comment"># For details see man 4 crontabs</span><br><br><span class="hljs-comment"># Example of job definition:</span><br><span class="hljs-comment"># .---------------- minute (0 - 59)</span><br><span class="hljs-comment"># |  .------------- hour (0 - 23)</span><br><span class="hljs-comment"># |  |  .---------- day of month (1 - 31)</span><br><span class="hljs-comment"># |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...</span><br><span class="hljs-comment"># |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat</span><br><span class="hljs-comment"># |  |  |  |  |</span><br><span class="hljs-comment"># *  *  *  *  * user-name  command to be executed</span><br><br></code></pre></td></tr></table></figure>
+
+<h5 id="用户计划任务"><a href="#用户计划任务" class="headerlink" title="用户计划任务"></a>用户计划任务</h5><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs awk">crontab命令（放在<span class="hljs-regexp">/var/</span>spool<span class="hljs-regexp">/cron/</span>USERNAME，默认PATH为<span class="hljs-regexp">/usr/</span>bin:/bin,可在第一行修改PATH，%将变成换行符，除非用\转义）：<br>crontab <br>-u user指定用户管理cron任务<br>-e编辑任务 <br>-l列出所有任务  <br>-r移除所有任务  <br><br></code></pre></td></tr></table></figure>
+
+<p>范例：</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">0</span> <span class="hljs-number">3</span> * * <span class="hljs-number">3</span> root  /bin/date #每周三凌晨三点执行data命令<br><br><span class="hljs-attribute">0</span> <span class="hljs-number">6</span>-<span class="hljs-number">12</span>/<span class="hljs-number">2</span> * <span class="hljs-number">11</span> * /app/bin/test.sh#在<span class="hljs-number">11</span>月的每天<span class="hljs-number">6</span>-<span class="hljs-number">12</span>点每个两小时执行test.sh脚本<br><br><span class="hljs-attribute">3</span>,<span class="hljs-number">15</span> * * * * date #每小时的第<span class="hljs-number">3</span>和第<span class="hljs-number">15</span>分钟执行<br><br><span class="hljs-attribute">3</span>,<span class="hljs-number">15</span> <span class="hljs-number">8</span>-<span class="hljs-number">11</span> * * * date #在上午<span class="hljs-number">8</span>点到<span class="hljs-number">11</span>点的第<span class="hljs-number">3</span>和第<span class="hljs-number">15</span>分钟执行<br><br><span class="hljs-attribute">3</span>,<span class="hljs-number">15</span> <span class="hljs-number">8</span>-<span class="hljs-number">11</span> */<span class="hljs-number">2</span> * * date #每隔两天的上午<span class="hljs-number">8</span>点到<span class="hljs-number">11</span>点的第<span class="hljs-number">3</span>和第<span class="hljs-number">15</span>分钟执行<br><br><span class="hljs-attribute">3</span>,<span class="hljs-number">15</span> <span class="hljs-number">8</span>-<span class="hljs-number">11</span> * * <span class="hljs-number">1</span> date #每个星期一的上午<span class="hljs-number">8</span>点到<span class="hljs-number">11</span>点的第<span class="hljs-number">3</span>和第<span class="hljs-number">15</span>分钟执行<br></code></pre></td></tr></table></figure>
+
+<h2 id="linux进程和内存"><a href="#linux进程和内存" class="headerlink" title="linux进程和内存"></a>linux进程和内存</h2><p><img src="image-20220905105843387.png" srcset="/img/loading.gif" lazyload alt="image-20220905105843387"></p>
+<h5 id="进程（运行中的程序的副本，被载入内存的指令集和，资源分配的单位）："><a href="#进程（运行中的程序的副本，被载入内存的指令集和，资源分配的单位）：" class="headerlink" title="进程（运行中的程序的副本，被载入内存的指令集和，资源分配的单位）："></a>进程（运行中的程序的副本，被载入内存的指令集和，资源分配的单位）：</h5><p>1：一段供进程执行的程序，该程序可以被多个进程执行。<br>2：独立的内核堆栈。<br>3：进程控制快（task_struct：有了这个数据结构，进程才能成为内核调度的一个基本单位接受内核的调度。同时，这个结构还记录着进程所占用的各项资源。<br>4：独立的存储空间：即拥有专有的用户空间，除了前面的内核空间还有用户空间。</p>
+<h5 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h5><p>线程是操作系统能够进行运算调度的最小单位。它被包含在进程之中，是进程中的实际运作单位。一条线程指的是进程中一个单一顺序的控制流，一个进程中可以并发多个线程，每条线程并行执行不同的任务。在Unix System V及SunOS中也被称为轻量进程（lightweight processes），但轻量进程更多指内核线程（kernel thread），而把用户线程（user thread）称为线程。进程与线程之间的关系 同一进程中的多条线程将共享该进程中的全部系统资源，如虚拟地址空间，文件描述符和信号处理等等。但同一进程中的多个线程有各自的调用栈（call stack），自己的寄存器环境（register context），自己的线程本地存储（thread-local storage）。</p>
+<h5 id="进程和线程的区别"><a href="#进程和线程的区别" class="headerlink" title="进程和线程的区别"></a>进程和线程的区别</h5><table>
+<thead>
+<tr>
+<th>比较项</th>
+<th>进程</th>
+<th>线程</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>占用资源</td>
+<td>初始单位为1M，固定不变</td>
+<td>初始为2KB，可随需要增大</td>
+</tr>
+<tr>
+<td>调度所属</td>
+<td>有OS内核完成</td>
+<td>用户完成</td>
+</tr>
+<tr>
+<td>切换开销</td>
+<td>涉及模式切换</td>
+<td>只有三个寄存器的值修改</td>
+</tr>
+<tr>
+<td>性能问题</td>
+<td>资源占用太高，频繁创建销毁会带来性能问题</td>
+<td>资源占用小，不会带来严重性能问题</td>
+</tr>
+<tr>
+<td>数据同步</td>
+<td>需要用锁机制确保数据一直性和可见性</td>
+<td>不需要锁机制，共享资源，执行效率远高于进程</td>
+</tr>
+</tbody></table>
+<h5 id="内存"><a href="#内存" class="headerlink" title="内存"></a>内存</h5><p>Linux操作系统采用虚拟内存管理技术，使得每个进程都有各自互不干涉的进程地址空间。该空间是块大小为4G的线性虚拟空间，用户所看到和接触到的都是该虚拟地址，无法看到实际的物理内存地址。利用这种虚拟地址不但能起到保护操作系统的效果（用户不能直接访问物理内存），而且更重要的是，用户程序可使用比实际物理内存更大的地址空间。</p>
+<h5 id="Linux-的虚拟内存管理："><a href="#Linux-的虚拟内存管理：" class="headerlink" title="Linux 的虚拟内存管理："></a>Linux 的虚拟内存管理：</h5><p>1、每个进程都有独立的虚拟地址空间，进程访问的虚拟地址并不是真正的物理地址；<br>2、虚拟地址可通过每个进程上的页表(在每个进程的内核虚拟地址空间)与物理地址进行映射，获得真正物理地址；<br>3、如果虚拟地址对应物理地址不在物理内存中，则产生缺页中断，真正分配物理地址，同时更新进程的页表；如果此时物理内存已耗尽，则根据内存替换算法淘汰部分页面至物理磁盘中。</p>
+<p><img src="image-20220905110953967.png" srcset="/img/loading.gif" lazyload alt="image-20220905110953967"></p>
+<h2 id="linux启动流程"><a href="#linux启动流程" class="headerlink" title="linux启动流程"></a>linux启动流程</h2><h5 id="centos6启动"><a href="#centos6启动" class="headerlink" title="centos6启动"></a>centos6启动</h5><p><img src="https://img-blog.csdn.net/20180907200453974?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjI1NTY2Ng==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>POST–GRUB1阶段MBR446–GRUB1.5MBR之后的空间（提供grub2文件所有分区的文件系统）–GRUB2阶段（grub.conf）–kernel(initramfs.img)–根分区–/sbin/init–/etc/inittab–/etc/rc.sysinit–/etc/rc.d/rc–/etc/rcN.d/K,S(/etc/init.d/)–/etc/rc.local–login登录</p>
+<p>1.加载BIOS的硬件信息，获取第一个启动设备<br>2.读取第一个启动设备MBR的引导加载程序(grub)的启动信息<br>3.加载核心操作系统的核心信息，核心开始解压缩，并尝试驱动所有的硬件设备<br>4.核心执行init程序，并获取默认的运行信息<br>5.init程序执行/etc/rc.d/rc.sysinit文件<br>6.启动核心的外挂模块<br>7.init执行运行的各个批处理文件(scripts)<br>8.init执行/etc/rc.d/rc.local<br>9.执行/bin/login程序，等待用户登录<br>10.登录之后开始以Shell控制主机</p>
+<h2 id="systemd服务"><a href="#systemd服务" class="headerlink" title="systemd服务"></a>systemd服务</h2><h5 id="实现目标：systemd服务定时去其他服务器上检查-tmp-下文件的个数，如果发现数量有变化就记录变化情况到文件中。"><a href="#实现目标：systemd服务定时去其他服务器上检查-tmp-下文件的个数，如果发现数量有变化就记录变化情况到文件中。" class="headerlink" title="实现目标：systemd服务定时去其他服务器上检查/tmp/下文件的个数，如果发现数量有变化就记录变化情况到文件中。"></a>实现目标：systemd服务定时去其他服务器上检查/tmp/下文件的个数，如果发现数量有变化就记录变化情况到文件中。</h5><p>从centos7以后开始用systemd代替init进程，系统启动和服务器守护进程管理器，负责在系统启动或运行时，集火系统资源，服务器进程和其他进程</p>
+<p>在/lib/systemd/system/目录下写服务文件test.service</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-section">[Unit]</span><br><span class="hljs-attr">Description</span>=test<br><br><span class="hljs-section">[Service]</span><br><span class="hljs-attr">ExecStart</span>=/bin/sh /root/test.sh<br><span class="hljs-attr">ExecStop</span>=/bin/kill sh<br><br><span class="hljs-section">[Install]</span><br><span class="hljs-attr">WantedBy</span>=multi-user.target<br></code></pre></td></tr></table></figure>
+
+<p>服务文件调用/root/test.sh脚本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-meta">#!/bin/bash</span><br>tmp=$(<span class="hljs-built_in">ls</span> -l /tmp/ |<span class="hljs-built_in">wc</span> -l)<br><span class="hljs-keyword">while</span> <span class="hljs-literal">true</span> ; <span class="hljs-keyword">do</span><br>        <span class="hljs-built_in">sleep</span> 3<br>        tmp0=$(<span class="hljs-built_in">ls</span> -l /tmp/ |<span class="hljs-built_in">wc</span> -l)<br>        <span class="hljs-keyword">if</span> [ <span class="hljs-string">&quot;<span class="hljs-variable">$tmp</span>&quot;</span> != <span class="hljs-string">&quot;<span class="hljs-variable">$tmp0</span>&quot;</span> ];<span class="hljs-keyword">then</span>   tmp=<span class="hljs-variable">$tmp0</span>;<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;the number of file in /tmp/ changed : <span class="hljs-variable">$tmp0</span>&quot;</span> &gt;&gt;/root/test.log; <span class="hljs-keyword">fi</span><br><span class="hljs-keyword">done</span><br></code></pre></td></tr></table></figure>
+
+<p>加载配置文件</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">systemctl daemon-reload</span> <br></code></pre></td></tr></table></figure>
+
+<p>开启服务</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">systemctl <span class="hljs-keyword">enable</span> <span class="hljs-comment">--now test.service </span><br></code></pre></td></tr></table></figure>
+
+<p>查看服务状态</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmake">systemctl status <span class="hljs-keyword">test</span>.service <br></code></pre></td></tr></table></figure>
+
+<p><img src="image-20220905133651698.png" srcset="/img/loading.gif" lazyload alt="image-20220905133651698"></p>
+<h2 id="linux内核编译安装"><a href="#linux内核编译安装" class="headerlink" title="linux内核编译安装"></a>linux内核编译安装</h2><p>查看当前内核版本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">uname</span> -r<br></code></pre></td></tr></table></figure>
+
+<p><img src="image-20220905134152600.png" srcset="/img/loading.gif" lazyload alt="image-20220905134152600"></p>
+<p>下载所需的内核</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">cd</span> /usr/local/src<br><span class="hljs-attribute">wget</span> https://mirrors.edge.kernel.org/pub/linux/kernel/v5.x/linux-<span class="hljs-number">5</span>.<span class="hljs-number">10</span>.<span class="hljs-number">10</span>.tar.gz<br><span class="hljs-attribute">tar</span> -zxvf linux-<span class="hljs-number">5</span>.<span class="hljs-number">10</span>.<span class="hljs-number">10</span>.tar.gz<br><span class="hljs-attribute">cd</span> linux-<span class="hljs-number">5</span>.<span class="hljs-number">10</span>.<span class="hljs-number">10</span><br><span class="hljs-attribute">ls</span><br></code></pre></td></tr></table></figure>
+
+<p>安装内核编译所需要的依赖</p>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mipsasm">yum <span class="hljs-keyword">install </span>-y ncurses-devel gcc-c++ make openssl-devel <span class="hljs-keyword">bison </span>flex elfutils-libelf-devel<br></code></pre></td></tr></table></figure>
+
+<p>运行menuconfig程序，选择需要的编译参数</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">make menuconfig</span><br></code></pre></td></tr></table></figure>
+
+<p>进入UI界面，参数不用改，切换到save直接保存，尔后按两下Esc退出。</p>
+<p>编译内核</p>
+<figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gauss"><span class="hljs-built_in">make</span> -j2<br></code></pre></td></tr></table></figure>
+
+
+<p>-j2参数根据个人自己的计算机进行设置，注意-j后面的数字不要超过你电脑的核心数就行了。</p>
+<p>这是一个漫长的过程，还有可能会出现错误，耐心的等待吧。注意保证你的电脑网络的畅通以及centos系统有足够大的硬盘空间。</p>
+<p>如果编译完成并没有报错的话就可以进行下一步的编译了。</p>
+<figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs gauss"><span class="hljs-built_in">make</span> modules<br><span class="hljs-built_in">make</span> modules_install<br><span class="hljs-built_in">make</span> install<br></code></pre></td></tr></table></figure>
+
+<p>使用grubby切换内核</p>
+<p>grubby是一个用于更新和显示有关各种体系结构特定的引导程序的配置文件信息的命令行工具。 它主要设计用于安装新内核并需要查找有关当前引导环境的信息的脚本，同时也可以对启动内核的各项信息参数进行修改。grubby已经默认安装在centos8中，如果系统中没有grubby我们也可以通过yum进行安装grubby工具。</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmake">yum <span class="hljs-keyword">install</span> -y grubby<br></code></pre></td></tr></table></figure>
+
+<p>查看当前系统默认启动的内核</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs actionscript">grubby --<span class="hljs-keyword">default</span>-kern<br></code></pre></td></tr></table></figure>
+
+<p>重启系统，感受新内核给你带来的欢乐吧。</p>
+<h2 id="awk命令"><a href="#awk命令" class="headerlink" title="awk命令"></a>awk命令</h2><p>awk是一个强大的文本分析工具，相对于grep的查找，sed的编辑，awk在其对数据分析并生成报告时，显得尤为强大。简单来说awk就是把文件逐行的读入，以空格为默认分隔符将每行切片，切开的部分再进行各种分析处理。</p>
+<p>示例1：计算1加到1000000方法</p>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs maxima">awk &#x27;BEGIN&#123;i=<span class="hljs-number">1</span>;<span class="hljs-built_in">sum</span>=<span class="hljs-number">0</span>;<span class="hljs-keyword">while</span>(i&lt;=<span class="hljs-number">1000000</span>)&#123;<span class="hljs-built_in">sum</span>+=i;i++&#125;;<span class="hljs-built_in">print</span> <span class="hljs-built_in">sum</span>&#125;&#x27;<br></code></pre></td></tr></table></figure>
+
+<p>用awk速度是最快的</p>
+<p><img src="image-20220905145931321.png" srcset="/img/loading.gif" lazyload alt="image-20220905145931321"></p>
+<p>示例2：打印九九乘法表：</p>
+<figure class="highlight scilab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs scilab">seq <span class="hljs-number">9</span> | sed <span class="hljs-string">&#x27;H;g&#x27;</span> | awk -v RS=<span class="hljs-string">&#x27;&#x27;</span> <span class="hljs-string">&#x27;&#123;for(i=1;i&lt;=NF;i++)printf(&quot;</span>%dx%d=%d<span class="hljs-literal">%s</span><span class="hljs-string">&quot;, i, NR, i*NR, i==NR?&quot;</span>\n<span class="hljs-string">&quot;:&quot;</span>\t<span class="hljs-string">&quot;)&#125;&#x27;</span><br><br></code></pre></td></tr></table></figure>
+
+<p>AWK用于格式化输出</p>
+<p><img src="image-20220905145912988.png" srcset="/img/loading.gif" lazyload alt="image-20220905145912988"></p>
+<p>示例3：统计用户名长度</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">awk -F: <span class="hljs-string">&#x27;&#123;print length($1)&#125;&#x27;</span> <span class="hljs-regexp">/etc/</span>passwd<br></code></pre></td></tr></table></figure>
+
+<p><img src="image-20220905150147499.png" srcset="/img/loading.gif" lazyload alt="image-20220905150147499"></p>
+<p>示例4：格式化打印 username和uid</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs swift">awk <span class="hljs-operator">-</span><span class="hljs-type">F</span>: &#x27;<span class="hljs-type">BEGIN</span>&#123;printf <span class="hljs-string">&quot;--------------------------------<span class="hljs-subst">\n</span>%-20s|%10s|<span class="hljs-subst">\n</span>--------------------------------<span class="hljs-subst">\n</span>&quot;</span>,<span class="hljs-string">&quot;username&quot;</span>,<span class="hljs-string">&quot;uid&quot;</span>&#125;&#123;printf <span class="hljs-string">&quot;--------------------------------<span class="hljs-subst">\n</span>%-20s|%10d|<span class="hljs-subst">\n</span>--------------------------------<span class="hljs-subst">\n</span>&quot;</span>,<span class="hljs-variable">$1</span>,<span class="hljs-variable">$3</span>&#125;&#x27; <span class="hljs-operator">/</span>etc<span class="hljs-operator">/</span>passwd<br></code></pre></td></tr></table></figure>
+
+<p><img src="image-20220905151314765.png" srcset="/img/loading.gif" lazyload alt="image-20220905151314765"></p>
+<p>示例5：统计tcp不同状态及出现次数</p>
+<figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs pf">netstat -tan |awk &#x27;/^tcp/&#123;<span class="hljs-keyword">state</span>[<span class="hljs-variable">$NF</span>]++&#125;END&#123;<span class="hljs-keyword">for</span>(i <span class="hljs-keyword">in</span> <span class="hljs-keyword">state</span>)&#123;print i,<span class="hljs-keyword">state</span>[i]&#125;&#125;&#x27;<br></code></pre></td></tr></table></figure>
+
+<p><img src="image-20220905151724059.png" srcset="/img/loading.gif" lazyload alt="image-20220905151724059"></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1at%E5%92%8Ccron%EF%BC%8C%E8%BF%9B%E7%A8%8B%E5%92%8C%E5%86%85%E5%AD%98%EF%BC%8C%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B%EF%BC%8Csystemd%EF%BC%8C%E5%86%85%E6%A0%B8%E7%BC%96%E8%AF%91%EF%BC%8Cawk/">定时任务at和cron，进程和内存，启动流程，systemd，内核编译，awk</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/09/23/%E7%AC%AC%E4%BA%94%E5%91%A8%E4%BD%9C%E4%B8%9A/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">第五周作业</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/08/14/%E7%AC%AC%E4%B8%89%E5%91%A8%E4%BD%9C%E4%B8%9A/">
+                        <span class="hidden-mobile">第三周作业</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

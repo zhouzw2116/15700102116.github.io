@@ -1,0 +1,551 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="背景">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第五周作业">
+<meta property="og:url" content="http://example.com/2022/09/23/%E7%AC%AC%E4%BA%94%E5%91%A8%E4%BD%9C%E4%B8%9A/index.html">
+<meta property="og:site_name" content="zhou&#39;s blog">
+<meta property="og:description" content="背景">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2022/09/23/%E7%AC%AC%E4%BA%94%E5%91%A8%E4%BD%9C%E4%B8%9A/image-20220923102746137.png">
+<meta property="og:image" content="http://example.com/2022/09/23/%E7%AC%AC%E4%BA%94%E5%91%A8%E4%BD%9C%E4%B8%9A/a1d5bd55f37f43fb92e445f985e7bc23.png">
+<meta property="og:image" content="http://example.com/2022/09/23/%E7%AC%AC%E4%BA%94%E5%91%A8%E4%BD%9C%E4%B8%9A/006b80218a2e4b7c9ced7a4d1d5b6248.png">
+<meta property="og:image" content="http://example.com/2022/09/23/%E7%AC%AC%E4%BA%94%E5%91%A8%E4%BD%9C%E4%B8%9A/image-20220925101813614.png">
+<meta property="og:image" content="http://example.com/2022/09/23/%E7%AC%AC%E4%BA%94%E5%91%A8%E4%BD%9C%E4%B8%9A/image-20220925101832750.png">
+<meta property="og:image" content="http://example.com/2022/09/23/%E7%AC%AC%E4%BA%94%E5%91%A8%E4%BD%9C%E4%B8%9A/image-20220925102059443.png">
+<meta property="og:image" content="http://example.com/2022/09/23/%E7%AC%AC%E4%BA%94%E5%91%A8%E4%BD%9C%E4%B8%9A/image-20220925102358531.png">
+<meta property="og:image" content="http://example.com/2022/09/23/%E7%AC%AC%E4%BA%94%E5%91%A8%E4%BD%9C%E4%B8%9A/image-20220925122505351.png">
+<meta property="og:image" content="http://example.com/2022/09/23/%E7%AC%AC%E4%BA%94%E5%91%A8%E4%BD%9C%E4%B8%9A/image-20220925122554023.png">
+<meta property="article:published_time" content="2022-09-23T01:33:16.000Z">
+<meta property="article:modified_time" content="2022-09-25T04:31:06.390Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="SUDO，PAM配置，chrony，ntp，智能CDN，DNS，iptables，firewalld，nft，MySQL">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/2022/09/23/%E7%AC%AC%E4%BA%94%E5%91%A8%E4%BD%9C%E4%B8%9A/image-20220923102746137.png">
+  
+  
+  <title>第五周作业 - zhou&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Home
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Tags
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="第五周作业">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-09-23 01:33" pubdate>
+        September 23, 2022 am
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      9.5k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      80 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">第五周作业</h1>
+            
+            <div class="markdown-body">
+              <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><span id="more"></span>
+
+<h2 id="一-SUDO，PAM配置规范"><a href="#一-SUDO，PAM配置规范" class="headerlink" title="一.SUDO，PAM配置规范"></a>一.SUDO，PAM<u>配置规范</u></h2><h3 id="SUDO"><a href="#SUDO" class="headerlink" title="SUDO"></a>SUDO</h3><h4 id="1-sudo的应用目的以及功能"><a href="#1-sudo的应用目的以及功能" class="headerlink" title="1.sudo的应用目的以及功能"></a>1.sudo的应用目的以及功能</h4><h5 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h5><p>  Linux系统中，许多与系统配置有关的命令都被设为只能由root执行，保证了系统配置层面的安全性。但大型服务器的实际使用过程中，root并不能独自完成所有的配置维护工作，比如增加新用户、重启等等。这就需要root将原本只能由他执行的命令授权给特定的管理用户执行，于是就出现了sudo命令以及对应的root配置命令visudo</p>
+<h5 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h5><p>  sudo命令加在命令行最前。当用户拥有root赋予的对应sudo权限后，就能通过sudo执行原本只能由root执行的命令，执行过程中拥有root权限。</p>
+<h4 id="2-sudo权限赋予机制"><a href="#2-sudo权限赋予机制" class="headerlink" title="2.sudo权限赋予机制"></a>2.sudo权限赋予机制</h4><p>  sudo命令的授权配置记录在/etc/sudoers文件和/etc/sudoers.d目录中（目录中以文件形式记录权限赋予，格式同sudoers，下不讨论）。root通过visudo命令配置对用户的授权命令（也可以对组赋予），配置立即生效。用户可以通过sudo -l命令查看自己获得的sudo权限，取得授权后使用sudo + <command>命令执行。</p>
+<h4 id="3-sudo权限赋予完整过程实现"><a href="#3-sudo权限赋予完整过程实现" class="headerlink" title="3.sudo权限赋予完整过程实现"></a>3.sudo权限赋予完整过程实现</h4><p>visudo<br> 首先切换到root用户，执行命令visudo</p>
+<p> 这时部分可能会默认使用nano文本编辑器打开文件，如果还是习惯用vim，可以用</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><pre><code class="hljs shell">export EDITOR=vim<br></code></pre></td></tr></table></figure>
+
+<h4 id="sudoers文件格式："><a href="#sudoers文件格式：" class="headerlink" title="sudoers文件格式："></a>sudoers文件格式：</h4><figure class="highlight nsis"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs nsis"><span class="hljs-comment">#</span><br><span class="hljs-comment"># This file MUST be edited with the &#x27;visudo&#x27; command as root.</span><br><span class="hljs-comment">#</span><br><span class="hljs-comment"># Please consider adding local content in /etc/sudoers.d/ instead of</span><br><span class="hljs-comment"># directly modifying this file.</span><br><span class="hljs-comment">#</span><br><span class="hljs-comment"># See the man page for details on how to write a sudoers file.</span><br><span class="hljs-comment">#</span><br>Defaults        env_reset<br>Defaults        mail_badpass<br>Defaults        secure_path=<span class="hljs-string">&quot;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin&quot;</span><br><br><span class="hljs-comment"># Host alias specification</span><br><br><span class="hljs-comment"># User alias specification</span><br><br><span class="hljs-comment"># Cmnd alias specification</span><br><br><span class="hljs-comment"># User privilege specification</span><br>root    <span class="hljs-literal">ALL</span>=(<span class="hljs-literal">ALL</span>:<span class="hljs-literal">ALL</span>) <span class="hljs-literal">ALL</span><br><br><span class="hljs-comment"># Members of the admin group may gain root privileges</span><br>%<span class="hljs-literal">admin</span> <span class="hljs-literal">ALL</span>=(<span class="hljs-literal">ALL</span>) <span class="hljs-literal">ALL</span><br><br><span class="hljs-comment"># Allow members of group sudo to execute any command</span><br>%sudo   <span class="hljs-literal">ALL</span>=(<span class="hljs-literal">ALL</span>:<span class="hljs-literal">ALL</span>) <span class="hljs-literal">ALL</span><br><br><span class="hljs-comment"># See sudoers(5) for more information on &quot;#include&quot; directives:</span><br><br><span class="hljs-comment">#includedir /etc/sudoers.d</span><br></code></pre></td></tr></table></figure>
+
+<p>用户权限设置，格式如下：</p>
+<p>root    ALL=(ALL:ALL) ALL<br>&lt;授予用户名&gt; &lt;受管理的IP地址/网段&gt;=（&lt;转化目标身份用户&gt;:&lt;转化目标身份组&gt;） &lt;命令&gt; </p>
+<p>注意：受管理的IP地址不是远程访问的客户端地址，而是授权给用户管理的主机IP地址</p>
+<p>该参数一般在服务器作为域控制管理器时需要另外设置，一般写ALL即可</p>
+<p>括号内两个参数可以空缺，默认为ALL</p>
+<p>命令后也可加参数，具体见注意事项</p>
+<p>sudo权限配置文件存放路径设置，也可设置多个权限配置文件目录，格式同样例</p>
+<h4 id="sudo查看权限及使用"><a href="#sudo查看权限及使用" class="headerlink" title="sudo查看权限及使用"></a>sudo查看权限及使用</h4><p> 用户使用sudo -l命令查看自己拥有的权限</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo -l<br></code></pre></td></tr></table></figure>
+
+
+<p> 第一次查看需要输入密码以确认身份</p>
+<p> 使用时只要在命令行前加sudo 即可</p>
+<p>4.注意事项<br>为了安全，sudoers文件一般建议使用visudo命令打开（拥有查错警告等保护措施），而不是直接用vim编辑</p>
+<p>权限赋予时对于特定命令若不加参数，则认为被赋权用户拥有添加所有参数的权限，若对命令指定参数，则只能执行只带该参数的命令。例如：</p>
+<p>test    ALL=(ALL:ALL) shutdown #该授权允许test用户执行带任何参数的shutdown命令<br>test    ALL=(ALL:ALL) shutdown -r now #该授权仅允许test用户执行立即重启命令<br>test    ALL=(ALL:ALL) ALL #该授权允许test用户执行任何命令<br>1<br>2<br>3<br>所以如果命令简略。则授权较大；命令详细，则授权较小</p>
+<p>在第一次开机配置第一位非root用户时，系统将该用户加入进名为sudo的附加组，而在sudoers配置文件中，初始就有对组sudo的授权<br>所以初始配置的用户拥有执行任何命令的sudo权限，而新加入的用户未配置前没有任何sudo权限</p>
+<h3 id="PAM"><a href="#PAM" class="headerlink" title="PAM"></a>PAM</h3><h4 id="一、pam简介"><a href="#一、pam简介" class="headerlink" title="一、pam简介"></a>一、pam简介</h4><p>Linux-PAM(linux可插入认证模块)是一套共享库，使本地系统管理员可以随意选择程序的认证方式。换句话说，不用重新编译一个包含PAM功能的应用程序，就可以改变它使用的认证机制。这种方式下,就算升级本地认证机制，也不用修改程序。PAM使用配置/etc/pam.d/下的文件，来管理对程序的认证方式。应用程序调用相应的配置文件，从而调用本地的认证模块。模块放置在/lib/security下,以加载动态库的形式进，像我们使用su命令时，系统会提示你输入root用户的密码。这就是su命令通过调用PAM模块实现的。</p>
+<h4 id="二、PAM的配置文件介绍"><a href="#二、PAM的配置文件介绍" class="headerlink" title="二、PAM的配置文件介绍"></a>二、PAM的配置文件介绍</h4><p>PAM配置文件写在/etc/pam.conf文件中<br>保存在 /etc/pam.d/下<br>内容如下图：</p>
+<p><img src="image-20220923102746137.png" srcset="/img/loading.gif" lazyload alt="image-20220923102746137"></p>
+<p>第一列代表模块类型<br>第二列代表控制标记<br>第三列代表模块名称<br>第四列代表模块参数</p>
+<h4 id="三、PAM模块类型"><a href="#三、PAM模块类型" class="headerlink" title="三、PAM模块类型"></a>三、PAM模块类型</h4><p>Linux-PAM有四种模块类型,分别代表四种不同的任务，它们是：认证管理(auth)，账号管理(account)，会话管理(session)和密码(password)管理，一个类型可能有多行，它们按顺序依次由PAM模块调用。</p>
+<p>auth：用来对用户的身份进行识别。如：提示用户输入密码，或判断用户是否为root等。<br>account：对帐号的各项属性进行检查。如：是否允许登录，是否达到最大用户数，或是root用户是否允许在这个终端登录等。<br>session：这个模块用来定义用户登录前的，及用户退出后所要进行的操作。如：登录连接信息，用户数据的打开与关闭，挂载文件系统等。<br>password：使用用户信息来更新。如：修改用户密码。</p>
+<h2 id="二-chrony搭建私有ntp服务"><a href="#二-chrony搭建私有ntp服务" class="headerlink" title="二.chrony搭建私有ntp服务"></a>二.chrony搭建私有ntp服务</h2><p><img src="a1d5bd55f37f43fb92e445f985e7bc23.png" srcset="/img/loading.gif" lazyload alt="a1d5bd55f37f43fb92e445f985e7bc23"></p>
+<h4 id="服务器端配置"><a href="#服务器端配置" class="headerlink" title="服务器端配置"></a>服务器端配置</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@rocky86 ~]#vim /etc/chrony.conf <br><span class="hljs-meta prompt_"># </span><span class="language-bash">Use public servers from the pool.ntp.org project.</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">Please consider joining the pool (http://www.pool.ntp.org/join.html).</span><br><span class="hljs-meta prompt_">#</span><span class="language-bash">pool 2.pool.ntp.org iburst</span><br>server ntp.aliyun.com iburst #和阿里云的服务器同步<br>server time1.cloud.tencent.com iburst #和腾讯云同步<br><span class="hljs-meta prompt_"># </span><span class="language-bash">Record the rate at <span class="hljs-built_in">which</span> the system clock gains/losses time.</span><br>driftfile /var/lib/chrony/drift<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">Allow the system clock to be stepped <span class="hljs-keyword">in</span> the first three updates</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash"><span class="hljs-keyword">if</span> its offset is larger than 1 second.</span><br>makestep 1.0 3<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">Enable kernel synchronization of the real-time clock (RTC).</span><br>rtcsync<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">Enable hardware timestamping on all interfaces that support it.</span><br><span class="hljs-meta prompt_">#</span><span class="language-bash">hwtimestamp *</span><br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">Increase the minimum number of selectable sources required to adjust</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">the system clock.</span><br><span class="hljs-meta prompt_">#</span><span class="language-bash">minsources 2</span><br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">Allow NTP client access from <span class="hljs-built_in">local</span> network.</span><br><span class="hljs-meta prompt_">#</span><span class="language-bash">allow 192.168.0.0/16</span><br>allow 10.0.0.0/24 #允许10.0.0.0网段的主机同步本服务器<br></code></pre></td></tr></table></figure>
+
+<h4 id="客户端配置"><a href="#客户端配置" class="headerlink" title="客户端配置"></a>客户端配置</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs shell">root@ubantu2004:~# vim /etc/chrony/chrony.conf <br>server 10.0.0.127 iburst<br>root@ubantu2004:~# systemctl restart chrony<br>root@ubantu2004:~# chronyc sources -v<br>210 Number of sources = 1<br><br>  .-- Source mode  &#x27;^&#x27; = server, &#x27;=&#x27; = peer, &#x27;#&#x27; = local clock.<br> / .- Source state &#x27;*&#x27; = current synced, &#x27;+&#x27; = combined , &#x27;-&#x27; = not combined,<br>| /   &#x27;?&#x27; = unreachable, &#x27;x&#x27; = time may be in error, &#x27;~&#x27; = time too variable.<br>||                                                 .- xxxx [ yyyy ] +/- zzzz<br>||      Reachability register (octal) -.           |  xxxx = adjusted offset,<br>||      Log2(Polling interval) --.      |          |  yyyy = measured offset,<br>||                                \     |          |  zzzz = estimated error.<br>||                                 |    |           \<br>MS Name/IP address         Stratum Poll Reach LastRx Last sample               <br>===============================================================================<br>^* 10.0.0.127                    3   6    17    21  +9901ns[ +116us] +/-   22ms<br></code></pre></td></tr></table></figure>
+
+<h2 id="三-智能CDN"><a href="#三-智能CDN" class="headerlink" title="三.智能CDN"></a>三.智能CDN</h2><p><img src="006b80218a2e4b7c9ced7a4d1d5b6248.png" srcset="/img/loading.gif" lazyload alt="006b80218a2e4b7c9ced7a4d1d5b6248"></p>
+<h4 id="CDN基本原理"><a href="#CDN基本原理" class="headerlink" title="CDN基本原理"></a>CDN基本原理</h4><p>CDN的基本原理是在用户访问相对集中的地区和网络设置一些缓存服务器。当用户访问网站时，利用全局的负载均衡技术将用户的访问指向距离最近的缓存服务器，由缓存服务器代替源站响应用户的访问请求。这样一方面减轻了源站服务器的工作压力，另一方面使用户可就近取得所需内容，解决inter网络拥挤的的状况，提高用户访问网站的响应速度。</p>
+<h4 id="CDN的优点"><a href="#CDN的优点" class="headerlink" title="CDN的优点"></a>CDN的优点</h4><p>本地cache加速，提高了企业站点的访问速度（尤其含有大量图片和静态页面站点）</p>
+<p>跨运营商的网络加速，保证不同网络的用户都能得到良好的访问质量</p>
+<p>远程访问用户权限根据DNS负载均衡技术智能自动选择cache服务器</p>
+<p>自动生成服务器的远程Mirror（镜像）cache服务器，远程用户访问时从cache服务器上读取数据，减少远程访问的带宽、分担网络流量、减轻源站点web服务器负载等功能</p>
+<p>广泛分布的CDN节点加上节点之间的智能冗余机制，可以有效预防黑客入侵</p>
+<h2 id="四-智能CDN实现"><a href="#四-智能CDN实现" class="headerlink" title="四.智能CDN实现"></a>四.智能CDN实现</h2><h4 id="利用view实现智能DNS"><a href="#利用view实现智能DNS" class="headerlink" title="利用view实现智能DNS"></a><strong>利用view实现智能DNS</strong></h4><blockquote>
+<p>实验目的：搭建DNS主从服务器架构，实现DNS服务冗余</p>
+</blockquote>
+<h4 id="前提准备"><a href="#前提准备" class="headerlink" title="前提准备"></a><strong>前提准备</strong></h4><blockquote>
+<p>关闭SElinux</p>
+<p>关闭防火墙</p>
+<p>时间统计</p>
+</blockquote>
+<h4 id="主DNS服务端配置文件实现view"><a href="#主DNS服务端配置文件实现view" class="headerlink" title="主DNS服务端配置文件实现view"></a><strong>主DNS服务端配置文件实现view</strong></h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><code class="hljs shell">yum -y install bind-y<br><br>\# 配置文件<br><br>vim /etc/named.conf <br><span class="hljs-meta prompt_">#</span><span class="language-bash">在文件最前面加下面行</span><br>acl beijingnet &#123;<br>    10.0.0.0/24;<br>&#125;;<br> <br>acl shanghainet &#123;<br>    176.16.0.0/16;<br>&#125;;<br> <br>acl othernet &#123;<br>    any;<br>&#125;;<br> <br><span class="hljs-meta prompt_"> </span><br><span class="hljs-meta prompt_">#</span><span class="language-bash">注释掉下面两行</span><br>// listen-on port 53 &#123; 127.0.01; &#125;;<br>// allow-query       &#123; localhost; &#125;;<br><span class="hljs-meta prompt_"> </span><br><span class="hljs-meta prompt_">#</span><span class="language-bash">其他略</span><br> <br><span class="hljs-meta prompt_"> </span><br><span class="hljs-meta prompt_">#</span><span class="language-bash">创建view</span><br>view beijingview &#123;<br>    match-clients  &#123;beijingnet; &#125;;<br>    include &quot;/etc/named.rfc1912.zones.bj&quot;;<br>&#125;;<br>view shanghaiview &#123;<br>    match-clients  &#123;shanghainet; &#125;;<br>    include &quot;/etc/named.rfc1912.zones.sh&quot;;<br>&#125;;<br>view otherview &#123;<br>    match-clients  &#123;othernet; &#125;;<br>    include &quot;/etc/named.rfc1912.zones.other&quot;;<br>&#125;;<br>include &quot;/etc/named.root.key&quot;;<br></code></pre></td></tr></table></figure>
+
+<h4 id="实现区域配置文件（以北京为例）"><a href="#实现区域配置文件（以北京为例）" class="headerlink" title="实现区域配置文件（以北京为例）"></a><strong>实现区域配置文件（以北京为例）</strong></h4><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs abnf">vim /etc/named.rfc1912.zones.bj<br>zone<span class="hljs-string">&quot;.&quot;</span> IN &#123;<br>    type hint<span class="hljs-comment">;</span><br>    file <span class="hljs-string">&quot;named.ca&quot;</span><span class="hljs-comment">;</span><br>&#125;<span class="hljs-comment">;</span><br>zone<span class="hljs-string">&quot;magedu.org&quot;</span> &#123;<br>    type master<span class="hljs-comment">;</span><br>    file <span class="hljs-string">&quot;magedu.org.zone.bj&quot;</span><span class="hljs-comment">;</span><br>&#125;<span class="hljs-comment">;</span><br></code></pre></td></tr></table></figure>
+
+<p>修改所属组：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs shell">chgrp named /etc/named.rfc1912.zones.bj<br><br> chgrp named /etc/named.rfc1912.zones.sh<br><br> chgrp named /etc/named.rfc1912.zones.other<br></code></pre></td></tr></table></figure>
+
+<h4 id="创建区域数据库文件"><a href="#创建区域数据库文件" class="headerlink" title="创建区域数据库文件"></a><strong>创建区域数据库文件</strong></h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs shell">vim /var/named/magedu.org.zone.bj <br><span class="hljs-meta prompt_">$</span><span class="language-bash">TTL 1D</span><br>@   IN SOA master  admain.magedu.org. ( 2 1H 20M 1D 1D )<br>        NS master<br>master A   10.0.0.127<br>websrv    A   10.0.0.127<br>www    CNAME    websrv<br></code></pre></td></tr></table></figure>
+
+<h4 id="实现位于不同区域的三个web服务器"><a href="#实现位于不同区域的三个web服务器" class="headerlink" title="实现位于不同区域的三个web服务器"></a>实现位于不同区域的三个web服务器</h4><p><img src="image-20220925101813614.png" srcset="/img/loading.gif" lazyload alt="image-20220925101813614"></p>
+<h4 id="客户端测试"><a href="#客户端测试" class="headerlink" title="客户端测试"></a>客户端测试</h4><p><img src="image-20220925101832750.png" srcset="/img/loading.gif" lazyload alt="image-20220925101832750"></p>
+<h2 id="五-解释DNS解析流程"><a href="#五-解释DNS解析流程" class="headerlink" title="五.解释DNS解析流程"></a>五.解释DNS解析流程</h2><p><img src="image-20220925102059443.png" srcset="/img/loading.gif" lazyload alt="image-20220925102059443"></p>
+<h4 id="DNS解析流程"><a href="#DNS解析流程" class="headerlink" title="DNS解析流程"></a><strong>DNS解析流程</strong></h4><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">1</span>.客户端提出域名解析请求，并将请求发送给本地域名服务器<br><br><span class="hljs-attribute">2</span>.本地域名服务器收到请求后，首先查询本地缓存，如果有这条记录，则本地域名服务器直接返回查询结果<br><br><span class="hljs-attribute">3</span>.如果本地缓存没有记录，则本地域名服务器直接向根域名服务器发送请求，然后根域名服务器返回域的主域名（根的子域）的本地域名服务器。服务器的地址<br><br><span class="hljs-attribute">4</span>.本地服务器向上一步返回的域名服务器发送请求后，然后接受请求的服务器查询自己的缓存，如果没有该记录，则返回相关下级域名服务器端的地址<br><br><span class="hljs-attribute">5</span>.重复地<span class="hljs-number">4</span>条，直到找到正确的记录<br><br><span class="hljs-attribute">6</span>.本地域名服务器将返回的结果保存到缓存中以备下次使用，并将结果返回给客户端<br><br></code></pre></td></tr></table></figure>
+
+<h5 id="递归查询"><a href="#递归查询" class="headerlink" title="递归查询"></a>递归查询</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">是指DNS服务器在收到用户发送的请求时，必须向用户返回一个准确的查询结果。如果DNS服务器本地没有存储与之对应的信息，则该服务器需要询问其他服务器，并将返回的查询结果提交给用户。<br></code></pre></td></tr></table></figure>
+
+<h5 id="迭代查询"><a href="#迭代查询" class="headerlink" title="迭代查询"></a>迭代查询</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">是指DNS服务器在收到用户发送的请求时，并不直接回复查询结果，而是告诉另一台服务器的地址，用户再向这台DNS服务器提交请求，这样依次反复，直到返回查询结果。<br></code></pre></td></tr></table></figure>
+
+<h5 id="DNS缓存"><a href="#DNS缓存" class="headerlink" title="DNS缓存"></a>DNS缓存</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">DNS缓存是将数据存储在靠近发起请求的客户端的位置，也可以说DNS数据是可以缓存在任意位置，最终目的是在此减少递归查询过程，可以提高用户请求响应速度<br></code></pre></td></tr></table></figure>
+
+<h2 id="六-iptables-5表5链解释"><a href="#六-iptables-5表5链解释" class="headerlink" title="六. iptables 5表5链解释"></a>六. iptables 5表5链解释</h2><p><img src="image-20220925102358531.png" srcset="/img/loading.gif" lazyload alt="image-20220925102358531"></p>
+<h5 id="5表：filter、nat、mangle、raw、security"><a href="#5表：filter、nat、mangle、raw、security" class="headerlink" title="5表：filter、nat、mangle、raw、security"></a>5表：filter、nat、mangle、raw、security</h5><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-keyword">filter</span>：过滤规则表，默认表，使用最广泛<br><br>nat：地址转换规则表<br><br>mangle：修改数据标记位规则表<br><br>raw：关闭/启用的链接跟踪机制，加快封包穿越防火墙的速度<br><br><span class="hljs-keyword">security</span>：用于强制访问控制（MAC）网络规则由linux安全模块（selinux）实现<br></code></pre></td></tr></table></figure>
+
+<h5 id="5链：INPUT、OUTPUT、FORWARD、PREROUTING、POSTROUTING"><a href="#5链：INPUT、OUTPUT、FORWARD、PREROUTING、POSTROUTING" class="headerlink" title="5链：INPUT、OUTPUT、FORWARD、PREROUTING、POSTROUTING"></a>5链：INPUT、OUTPUT、FORWARD、PREROUTING、POSTROUTING</h5><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">INPUT</span>：进来的数据包应用此规则链中的策略（包含：<span class="hljs-attribute">filter</span>、mangle）<br><br>OUTPUT：外出的数据包应用此规则链的策略（包含：<span class="hljs-attribute">filter</span>、nat、mangle、raw）<br><br>FORWARD：转发数据包时应用此规则链中的策略（包含：<span class="hljs-attribute">filter</span>、mangle）<br><br>PREROUTING：对数据包作路由选择前应用此链中的规则（包含：nat、mangle、raw）<br><br>POSTROUTING：对数据包作路由选择后应用此链中的规则（包含：nat、mangle、raw)<br></code></pre></td></tr></table></figure>
+
+<h5 id="优先级有高到低的顺序为："><a href="#优先级有高到低的顺序为：" class="headerlink" title="优先级有高到低的顺序为："></a><strong>优先级有高到低的顺序为：</strong></h5><figure class="highlight xl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs xl"><span class="hljs-function"><span class="hljs-title">security</span> --&gt;</span> <span class="hljs-function"><span class="hljs-title">raw</span> --&gt;</span> <span class="hljs-function"><span class="hljs-title">mangle</span> --&gt;</span> <span class="hljs-function"><span class="hljs-title">nat</span> --&gt;</span> filter<br></code></pre></td></tr></table></figure>
+
+<h2 id="七-iptables-firewalld-nftable-实现主机防火墙。5000-6000端口仅192-168-0-0-24网段内的主机访问"><a href="#七-iptables-firewalld-nftable-实现主机防火墙。5000-6000端口仅192-168-0-0-24网段内的主机访问" class="headerlink" title="七.iptables/firewalld/nftable 实现主机防火墙。5000-6000端口仅192.168.0.0/24网段内的主机访问"></a>七.iptables/firewalld/nftable 实现主机防火墙。5000-6000端口仅192.168.0.0/24网段内的主机访问</h2><h5 id="iptables"><a href="#iptables" class="headerlink" title="iptables"></a>iptables</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs shell">iptables -A INPUT  ! -s 192.168.0.0/24  -p tcp -m multiport --dports 5000:6000 -j REJECT<br> <br> iptables -nvL --line-numbers<br>Chain INPUT (policy ACCEPT 0 packets, 0 bytes)<br>num   pkts bytes target     prot opt in     out     source               destination<br>1        2   112 REJECT     tcp  --  *      *      !192.168.0.0/24         0.0.0.0/0            multiport dports 5000:6000 reject-with icmp-port-unreachable<br> <br>Chain FORWARD (policy ACCEPT 0 packets, 0 bytes)<br>num   pkts bytes target     prot opt in     out     source               destination<br> <br>Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)<br>num   pkts bytes target     prot opt in     out     source               destination<br><span class="hljs-meta prompt_"> </span><br><span class="hljs-meta prompt_">#</span><span class="language-bash">永久保存规则</span><br>yum -y install iptables-service<br>iptables-save &gt; /etc/sysconfig/iptables<br>systemctl enable iptables.service <br>systemctl mask firewalld.service nftables.service<br><br></code></pre></td></tr></table></figure>
+
+<h5 id="firewalld"><a href="#firewalld" class="headerlink" title="firewalld"></a>firewalld</h5><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">systemctl</span> start firewalld<br><span class="hljs-attribute">firewall</span>-cmd --permanent --zone=public --add-rich-rule=&#x27;rule family=ipv4 source address=<span class="hljs-number">192.168.0.0</span>/<span class="hljs-number">24</span> port port=<span class="hljs-number">5000</span>-<span class="hljs-number">6000</span>  accept&#x27;<br><br></code></pre></td></tr></table></figure>
+
+<h5 id="nft"><a href="#nft" class="headerlink" title="nft"></a>nft</h5><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">nft list ruleset <br>nft <span class="hljs-keyword">add</span> <span class="hljs-keyword">table</span> <span class="hljs-type">inet</span> test_table<br>nft <span class="hljs-keyword">add</span> chain <span class="hljs-type">inet</span> test_table test_filter_input_chain &#123; <span class="hljs-keyword">type</span> <span class="hljs-keyword">filter</span> hook <span class="hljs-keyword">input</span> priority <span class="hljs-number">0</span> \; &#125;<br>nft <span class="hljs-keyword">add</span> <span class="hljs-keyword">rule</span> <span class="hljs-type">inet</span> test_table test_filter_input_chain handle <span class="hljs-number">0</span> ip saddr != <span class="hljs-number">192.168</span><span class="hljs-number">.0</span><span class="hljs-number">.0</span>/<span class="hljs-number">24</span>  dport &#123;<span class="hljs-number">5000</span><span class="hljs-number">-6000</span>&#125; reject<br></code></pre></td></tr></table></figure>
+
+<h2 id="八、mysql的各发行版有哪些-？"><a href="#八、mysql的各发行版有哪些-？" class="headerlink" title="八、mysql的各发行版有哪些 ？"></a>八、mysql的各发行版有哪些 ？</h2><p><strong>MySQL 常见的发行版本</strong><br>MySQL 官方版本（社区版、企业版）<br>Percona MySQL：在 MySQL 官方发行版上进行二次开发<br>MariaDB<br><strong>各个发行版本之间的区别和优缺点</strong></p>
+<p><img src="image-20220925122505351.png" srcset="/img/loading.gif" lazyload alt="image-20220925122505351"></p>
+<h2 id="九、mysql索引的作用"><a href="#九、mysql索引的作用" class="headerlink" title="九、mysql索引的作用"></a>九、mysql索引的作用</h2><h5 id="索引的优点"><a href="#索引的优点" class="headerlink" title="索引的优点"></a>索引的优点</h5><p>创建索引可以大幅提高系统性能，帮助用户提高查询的速度；<br>通过索引的唯一性，可以保证数据库表中的每一行数据的唯一性；<br>可以加速表与表之间的链接；<br>降低查询中分组和排序的时间。<br>当然了，没有任何事情是完美的，索引也是如此，尽管索引好处非常多，但是其也有局限性合理性以及片面性。</p>
+<h5 id="索引的缺点"><a href="#索引的缺点" class="headerlink" title="索引的缺点"></a>索引的缺点</h5><p>索引的存储需要占用磁盘空间；<br>当数据的量非常巨大时，索引的创建和维护所耗费的时间也是相当大的；<br>当每次执行CRU操作时，索引也需要动态维护，降低了数据的维护速度。</p>
+<h2 id="十、mysql-btree索引的原理"><a href="#十、mysql-btree索引的原理" class="headerlink" title="十、mysql btree索引的原理"></a>十、mysql btree索引的原理</h2><p><img src="image-20220925122554023.png" srcset="/img/loading.gif" lazyload alt="image-20220925122554023"></p>
+<p>B+ 树是一种树数据结构，是一个n叉排序树，每个节点通常有多个孩子，一棵B+树包含根节点、内部节点和叶子节点。 </p>
+<p>B-Tree<br>为了描述B-Tree，首先定义一条数据记录为一个二元组[key, data]，key为记录的键值，对于不同数据记录，key是互不相同的；data为数据记录除key外的数据。那么B-Tree是满足下列条件的数据结构：</p>
+<p>d为大于1的一个正整数，称为B-Tree的度。<br>h为一个正整数，称为B-Tree的高度。<br>每个非叶子节点由n-1个key和n个指针组成，其中d&lt;=n&lt;=2d。<br>每个叶子节点最少包含一个key和两个指针，最多包含2d-1个key和2d个指针，叶节点的指针均为null 。<br>所有叶节点具有相同的深度，等于树高h。<br>key和指针互相间隔，节点两端是指针。<br>一个节点中的key从左到右非递减排列。<br>所有节点组成树结构。<br>每个指针要么为null，要么指向另外一个节点。<br>如果某个指针在节点node最左边且不为null，则其指向节点的所有key小于v(key1)v(key1)，其中v(key1)v(key1)为node的第一个key的值。<br>如果某个指针在节点node最右边且不为null，则其指向节点的所有key大于v(keym)v(keym)，其中v(keym)v(keym)为node的最后一个key的值。<br>如果某个指针在节点node的左右相邻key分别是keyikeyi和keyi+1keyi+1且不为null，则其指向节点的所有key小于v(keyi+1)v(keyi+1)且大于v(keyi)v(keyi)。</p>
+<h2 id="十一、mysql安全加固"><a href="#十一、mysql安全加固" class="headerlink" title="十一、mysql安全加固"></a>十一、mysql安全加固</h2><p><strong>相关措施</strong></p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs xquery">配置密码复杂度<br><br>配置密码过期策略<br><br>限制mysql多次登录失败重试时间<br><br>禁<span class="hljs-built_in">止root</span>账号登录<br><br>禁止空口令登录<br><br>根据用户的业务需要，配置其所需的最小权限<br><br>删除匿名账号<br><br><span class="hljs-built_in">除root</span>账号外，任何用户不应有mysql库user表的存取权限<br></code></pre></td></tr></table></figure>
+
+<p><strong>执行安全加固脚本</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">安装完mysql-server 会提示可以运行mysql_secure_installation。运行mysql_secure_installation会执行几个设置：<br>为root用户设置密码<br>删除匿名账号<br>取消root用户远程登录<br>删除<span class="hljs-built_in">test</span>库和对<span class="hljs-built_in">test</span>库的访问权限<br>刷新授权表使修改生效<br></code></pre></td></tr></table></figure>
+
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/SUDO%EF%BC%8CPAM%E9%85%8D%E7%BD%AE%EF%BC%8Cchrony%EF%BC%8Cntp%EF%BC%8C%E6%99%BA%E8%83%BDCDN%EF%BC%8CDNS%EF%BC%8Ciptables%EF%BC%8Cfirewalld%EF%BC%8Cnft%EF%BC%8CMySQL/">SUDO，PAM配置，chrony，ntp，智能CDN，DNS，iptables，firewalld，nft，MySQL</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/10/26/%E7%AC%AC%E5%85%AD%E5%91%A8%E4%BD%9C%E4%B8%9A/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">第六周作业</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/08/30/%E7%AC%AC%E5%9B%9B%E5%91%A8%E4%BD%9C%E4%B8%9A/">
+                        <span class="hidden-mobile">第四周作业</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
